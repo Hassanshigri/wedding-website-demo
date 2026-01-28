@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook - Aisha & Rohan's Wedding</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Aisha & Rohan</a>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="love-story.html"><i class="fas fa-heart"></i> Love Story</a></li>
+                <li><a href="mehndi.html"><i class="fas fa-paint-brush"></i> Mehndi</a></li>
+                <li><a href="barat.html"><i class="fas fa-gem"></i> Barat</a></li>
+                <li><a href="walima.html"><i class="fas fa-utensils"></i> Walima</a></li>
+                <li><a href="rsvp.html"><i class="fas fa-envelope"></i> RSVP</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="guestbook.html" class="active"><i class="fas fa-book"></i> Guestbook</a></li>
+                <li><a href="live.html"><i class="fas fa-video"></i> Live</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header"
+        style="background: linear-gradient(rgba(255, 87, 34, 0.8), rgba(255, 87, 34, 0.8)), 
+                url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="container">
+            <h1>Guestbook</h1>
+            <p>Leave your warm wishes and loving messages</p>
+            <div class="guestbook-stats">
+                <span><i class="fas fa-pen"></i> 148 Messages</span>
+                <span><i class="fas fa-heart"></i> 324 Hearts</span>
+                <span><i class="fas fa-globe"></i> 12 Countries</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guestbook Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Introduction -->
+            <div class="guestbook-intro">
+                <div class="intro-content">
+                    <h2>Share Your Wishes</h2>
+                    <p>Your loving messages mean the world to us. Whether you're near or far, please leave a note to
+                        share in our joy and create a lasting memory of this special time in our lives.</p>
+                    <div class="intro-features">
+                        <div class="feature">
+                            <i class="fas fa-star"></i>
+                            <p>Your messages will be cherished forever</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <p>All messages are moderated for privacy</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-gift"></i>
+                            <p>Your words are the greatest gift</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Aisha & Rohan">
+                </div>
+            </div>
+
+            <!-- Guestbook Form -->
+            <div class="guestbook-form-section">
+                <div class="form-header">
+                    <h3><i class="fas fa-pen-alt"></i> Write Your Message</h3>
+                    <p>Share your thoughts, memories, and well wishes</p>
+                </div>
+
+                <form id="guestbookForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="guestName">Your Name *</label>
+                            <input type="text" id="guestName" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guestEmail">Email Address</label>
+                            <input type="email" id="guestEmail" placeholder="Enter your email (optional)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guestRelation">Your Relationship *</label>
+                            <select id="guestRelation" required>
+                                <option value="">Select relationship</option>
+                                <option value="family">Family Member</option>
+                                <option value="friend">Friend</option>
+                                <option value="colleague">Colleague</option>
+                                <option value="relative">Relative</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guestLocation">Location</label>
+                            <input type="text" id="guestLocation" placeholder="City, Country">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guestMessage">Your Message *</label>
+                        <div class="message-box">
+                            <textarea id="guestMessage"
+                                placeholder="Write your heartfelt message here... Share memories, advice, or blessings. Your words will be treasured forever."
+                                rows="6" required></textarea>
+                            <div class="message-tools">
+                                <div class="char-count">
+                                    <span id="charCount">0</span>/1000 characters
+                                </div>
+                                <div class="format-buttons">
+                                    <button type="button" class="format-btn" data-format="bold"><i
+                                            class="fas fa-bold"></i></button>
+                                    <button type="button" class="format-btn" data-format="italic"><i
+                                            class="fas fa-italic"></i></button>
+                                    <button type="button" class="format-btn" data-format="heart"><i
+                                            class="fas fa-heart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messagePrivacy">Privacy Setting</label>
+                        <div class="privacy-options">
+                            <label class="privacy-option">
+                                <input type="radio" name="privacy" value="public" checked>
+                                <div class="option-content">
+                                    <i class="fas fa-globe"></i>
+                                    <div>
+                                        <h4>Public</h4>
+                                        <p>Visible to all visitors</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="privacy-option">
+                                <input type="radio" name="privacy" value="private">
+                                <div class="option-content">
+                                    <i class="fas fa-lock"></i>
+                                    <div>
+                                        <h4>Private</h4>
+                                        <p>Visible only to couple</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Add Some Love</label>
+                        <div class="reaction-buttons">
+                            <button type="button" class="reaction-btn" data-reaction="❤️">
+                                <span>❤️</span>
+                                <span class="tooltip">Love</span>
+                            </button>
+                            <button type="button" class="reaction-btn" data-reaction="🎉">
+                                <span>🎉</span>
+                                <span class="tooltip">Celebrate</span>
+                            </button>
+                            <button type="button" class="reaction-btn" data-reaction="🙏">
+                                <span>🙏</span>
+                                <span class="tooltip">Blessings</span>
+                            </button>
+                            <button type="button" class="reaction-btn" data-reaction="😊">
+                                <span>😊</span>
+                                <span class="tooltip">Smile</span>
+                            </button>
+                            <button type="button" class="reaction-btn" data-reaction="🌟">
+                                <span>🌟</span>
+                                <span class="tooltip">Star</span>
+                            </button>
+                            <button type="button" class="reaction-btn" data-reaction="💕">
+                                <span>💕</span>
+                                <span class="tooltip">Hearts</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photoUpload">Add a Photo (Optional)</label>
+                        <div class="photo-upload-area" id="photoUploadArea">
+                            <div class="upload-placeholder">
+                                <i class="fas fa-camera"></i>
+                                <p>Click to upload a photo with your message</p>
+                                <small>Max size: 2MB • JPG, PNG, GIF</small>
+                            </div>
+                            <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                        </div>
+                        <div class="photo-preview" id="photoPreview"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="terms-agreement">
+                            <input type="checkbox" id="termsAgree" required>
+                            <label for="termsAgree">
+                                I understand that my message may be published on this guestbook (unless marked private)
+                                and will be cherished by Aisha & Rohan.
+                            </label>
+                        </div>
+
+                        <div class="submit-buttons">
+                            <button type="submit" class="btn-primary submit-btn">
+                                <i class="fas fa-paper-plane"></i> Post Message
+                            </button>
+                            <button type="button" class="btn-secondary" id="previewMessage">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                            <button type="reset" class="btn-secondary">
+                                <i class="fas fa-redo"></i> Clear
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Preview Modal -->
+            <div class="preview-modal" id="previewModal">
+                <div class="preview-content">
+                    <div class="preview-header">
+                        <h3><i class="fas fa-eye"></i> Message Preview</h3>
+                        <button class="preview-close">&times;</button>
+                    </div>
+                    <div class="preview-body">
+                        <div class="message-preview" id="messagePreview">
+                            <!-- Preview will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="preview-actions">
+                        <button class="btn-secondary preview-close">Edit Message</button>
+                        <button class="btn-primary" id="confirmPost">Post Message</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guestbook Messages -->
+            <div class="guestbook-messages-section">
+                <div class="messages-header">
+                    <h2><i class="fas fa-book-open"></i> Messages from Loved Ones</h2>
+                    <div class="messages-controls">
+                        <div class="sort-options">
+                            <label>Sort by:</label>
+                            <select id="sortMessages">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="likes">Most Liked</option>
+                                <option value="family">Family First</option>
+                            </select>
+                        </div>
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchMessages" placeholder="Search messages...">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will be loaded here -->
+                </div>
+
+                <div class="messages-pagination">
+                    <button class="pagination-btn" id="prevPage" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <div class="page-indicator">
+                        Page <span id="currentPage">1</span> of <span id="totalPages">1</span>
+                    </div>
+                    <button class="pagination-btn" id="nextPage">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Special Messages Section -->
+            <div class="special-messages-section">
+                <h2 class="text-center"><i class="fas fa-star"></i> Featured Messages</h2>
+                <p class="text-center section-subtitle">Special wishes from close family and friends</p>
+
+                <div class="special-messages-grid">
+                    <div class="special-message featured">
+                        <div class="message-header">
+                            <div class="guest-avatar">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="guest-info">
+                                <h4>Parents</h4>
+                                <p class="guest-relation">Family</p>
+                            </div>
+                            <div class="message-date">
+                                <i class="far fa-calendar"></i> Today
+                            </div>
+                        </div>
+                        <div class="message-content">
+                            <p>"Our dearest Aisha and Rohan, seeing you both together fills our hearts with immeasurable
+                                joy. May Allah bless your union with endless happiness, prosperity, and love. You have
+                                our unconditional love and support always."</p>
+                            <div class="message-reactions">
+                                <span class="reaction">❤️</span>
+                                <span class="reaction">🙏</span>
+                                <span class="reaction">🌟</span>
+                            </div>
+                        </div>
+                        <div class="message-footer">
+                            <div class="like-count">
+                                <i class="fas fa-heart"></i> 42
+                            </div>
+                            <div class="message-tags">
+                                <span class="tag">Family</span>
+                                <span class="tag">Blessings</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special-message">
+                        <div class="message-header">
+                            <div class="guest-avatar">
+                                S
+                            </div>
+                            <div class="guest-info">
+                                <h4>Sarah Ahmed</h4>
+                                <p class="guest-relation">Best Friend</p>
+                            </div>
+                            <div class="message-date">
+                                <i class="far fa-calendar"></i> 2 days ago
+                            </div>
+                        </div>
+                        <div class="message-content">
+                            <p>"Aisha, my dear friend! I've watched your love story unfold and couldn't be happier for
+                                you both. Rohan, you've found an amazing partner. Wishing you both a lifetime of
+                                laughter, adventure, and love!"</p>
+                            <div class="message-reactions">
+                                <span class="reaction">💕</span>
+                                <span class="reaction">🎉</span>
+                            </div>
+                        </div>
+                        <div class="message-footer">
+                            <div class="like-count">
+                                <i class="fas fa-heart"></i> 28
+                            </div>
+                            <div class="message-tags">
+                                <span class="tag">Friendship</span>
+                                <span class="tag">Best Wishes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="statistics-section">
+                <h2 class="text-center"><i class="fas fa-chart-bar"></i> Guestbook Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>148</h3>
+                            <p>Total Messages</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>324</h3>
+                            <p>Total Reactions</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>12</h3>
+                            <p>Countries Represented</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>45</h3>
+                            <p>Photos Shared</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-chart">
+                    <h4><i class="fas fa-chart-line"></i> Message Activity</h4>
+                    <div class="chart-container">
+                        <div class="chart-bar" style="height: 80%;" data-date="Nov 13">
+                            <span class="bar-label">Mehndi</span>
+                            <span class="bar-value">32</span>
+                        </div>
+                        <div class="chart-bar" style="height: 95%;" data-date="Nov 14">
+                            <span class="bar-label">Barat</span>
+                            <span class="bar-value">45</span>
+                        </div>
+                        <div class="chart-bar" style="height: 100%;" data-date="Nov 15">
+                            <span class="bar-label">Walima</span>
+                            <span class="bar-value">52</span>
+                        </div>
+                        <div class="chart-bar" style="height: 65%;" data-date="Nov 16">
+                            <span class="bar-label">Today</span>
+                            <span class="bar-value">19</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download Messages -->
+            <div class="download-section">
+                <div class="download-content">
+                    <h3><i class="fas fa-download"></i> Preserve the Memories</h3>
+                    <p>We're compiling all your beautiful messages into a special keepsake book. You can also download
+                        the guestbook as a PDF to keep forever.</p>
+                    <div class="download-options">
+                        <button class="btn-primary" id="downloadPDF">
+                            <i class="fas fa-file-pdf"></i> Download PDF
+                        </button>
+                        <button class="btn-secondary" id="printGuestbook">
+                            <i class="fas fa-print"></i> Print Guestbook
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Aisha & Rohan</h3>
+                    <p>Your loving messages have touched our hearts deeply. We will cherish these words forever. Thank
+                        you for being part of our story.</p>
+                    <div class="couple-signature">
+                        <p>With gratitude,</p>
+                        <h4>Aisha & Rohan</h4>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Guestbook Info</h3>
+                    <p><i class="fas fa-question-circle"></i> All messages are moderated</p>
+                    <p><i class="fas fa-clock"></i> Messages appear after approval</p>
+                    <p><i class="fas fa-envelope"></i> Questions: guestbook@aishaandrohan.com</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Share the Love</h3>
+                    <p>Spread the joy by sharing our guestbook with others</p>
+                    <div class="social-share">
+                        <button class="social-btn" data-platform="facebook">
+                            <i class="fab fa-facebook"></i>
+                        </button>
+                        <button class="social-btn" data-platform="twitter">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button class="social-btn" data-platform="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </button>
+                        <button class="social-btn" data-platform="link">
+                            <i class="fas fa-link"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aisha & Rohan's Wedding. All rights reserved.</p>
+                <p>Every message in this guestbook is a cherished memory</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+
+    <!-- Guestbook Specific CSS -->
+    <style>
+        .active {
+            color: var(--primary-color) !important;
+            font-weight: 600 !important;
+        }
+
+        .guestbook-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .guestbook-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .guestbook-stats i {
+            color: #FFD700;
+        }
+
+        /* Introduction */
+        .guestbook-intro {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro-content {
+            flex: 1;
+        }
+
+        .intro-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .intro-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature i {
+            color: #ff5722;
+            font-size: 1.5rem;
+        }
+
+        .intro-image {
+            flex: 0 0 300px;
+        }
+
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Guestbook Form */
+        .guestbook-form-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-header h3 {
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header i {
+            color: #ff5722;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .message-box {
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .message-box:focus-within {
+            border-color: #ff5722;
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+        }
+
+        #guestMessage {
+            width: 100%;
+            padding: 1.5rem;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 200px;
+        }
+
+        #guestMessage:focus {
+            outline: none;
+        }
+
+        .message-tools {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: var(--light-bg);
+            border-top: 1px solid #eee;
+        }
+
+        .char-count {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .format-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .format-btn {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .format-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Privacy Options */
+        .privacy-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .privacy-option {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .privacy-option input {
+            display: none;
+        }
+
+        .privacy-option input:checked+.option-content {
+            color: #ff5722;
+        }
+
+        .privacy-option input:checked+.option-content {
+            border-color: #ff5722;
+            background: rgba(255, 87, 34, 0.05);
+        }
+
+        .option-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .option-content i {
+            font-size: 1.5rem;
+        }
+
+        .option-content h4 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .option-content p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Reaction Buttons */
+        .reaction-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .reaction-btn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-bg);
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .reaction-btn:hover {
+            transform: translateY(-3px);
+            border-color: #ff5722;
+            background: rgba(255, 87, 34, 0.1);
+        }
+
+        .reaction-btn .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .reaction-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* Photo Upload */
+        .photo-upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .photo-upload-area:hover {
+            border-color: #ff5722;
+            background: rgba(255, 87, 34, 0.05);
+        }
+
+        .upload-placeholder i {
+            font-size: 2.5rem;
+            color: #ff5722;
+            margin-bottom: 1rem;
+        }
+
+        .photo-preview {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .preview-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .remove-preview {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        /* Form Actions */
+        .form-actions {
+            margin-top: 3rem;
+        }
+
+        .terms-agreement {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+
+        .terms-agreement input {
+            margin-top: 0.3rem;
+        }
+
+        .submit-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .submit-btn {
+            background: #ff5722;
+            border-color: #ff5722;
+            padding: 1rem 3rem;
+        }
+
+        .submit-btn:hover {
+            background: #e64a19;
+            border-color: #e64a19;
+        }
+
+        /* Preview Modal */
+        .preview-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .preview-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .preview-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .preview-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .preview-close {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #666;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .preview-close:hover {
+            color: var(--primary-color);
+        }
+
+        .preview-body {
+            padding: 2rem;
+        }
+
+        .message-preview {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .preview-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding: 1.5rem 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* Messages Section */
+        .guestbook-messages-section {
+            margin: 4rem 0;
+        }
+
+        .messages-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .messages-controls {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .sort-options {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sort-options select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: var(--white);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        #searchMessages {
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            width: 250px;
+        }
+
+        /* Messages Container */
+        .messages-container {
+            min-height: 500px;
+        }
+
+        .message-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            animation: slideIn 0.5s ease;
+            transition: var(--transition);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .guest-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff5722, #ff9800);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .guest-avatar i {
+            font-size: 1.2rem;
+        }
+
+        .guest-info {
+            flex: 1;
+        }
+
+        .guest-info h4 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .guest-relation {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        .message-date {
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .message-content {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .message-content p {
+            margin: 0;
+        }
+
+        .message-photo {
+            margin: 1rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 300px;
+        }
+
+        .message-photo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .message-reactions {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .message-reactions .reaction {
+            font-size: 1.2rem;
+        }
+
+        .message-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .like-count {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .like-count:hover {
+            color: #e91e63;
+        }
+
+        .message-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--light-bg);
+            color: #666;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .message-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .message-action-btn {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .message-action-btn:hover {
+            color: var(--primary-color);
+        }
+
+        /* Pagination */
+        .messages-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pagination-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--light-bg);
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-btn:not(:disabled):hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .page-indicator {
+            color: #666;
+        }
+
+        /* Special Messages */
+        .special-messages-section {
+            margin: 4rem 0;
+        }
+
+        .special-messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .special-message {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .special-message.featured {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border: 2px solid #ffd54f;
+        }
+
+        .special-message:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Statistics */
+        .statistics-section {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: var(--light-bg);
+            border-radius: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff5722, #ff9800);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .stat-content h3 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .message-chart {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            gap: 1.5rem;
+            height: 200px;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(to top, #ff5722, #ff9800);
+            border-radius: 5px;
+            position: relative;
+            min-height: 20px;
+            transition: height 1s ease;
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        /* Download Section */
+        .download-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .download-content h3 {
+            color: white;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .download-options {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .download-options .btn-primary {
+            background: white;
+            color: #667eea;
+            border: none;
+        }
+
+        .download-options .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid white;
+        }
+
+        /* Social Share */
+        .social-share {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-bg);
+            border-radius: 50%;
+            color: var(--text-color);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .guestbook-intro {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .intro-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .feature {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .guestbook-stats {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .messages-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .messages-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #searchMessages {
+                width: 100%;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-options {
+                grid-template-columns: 1fr;
+            }
+
+            .submit-buttons {
+                flex-direction: column;
+            }
+
+            .message-footer {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+
+            .special-messages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-options {
+                flex-direction: column;
+            }
+
+            .guestbook-form-section,
+            .guestbook-intro,
+            .statistics-section,
+            .download-section {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .guestbook-stats span {
+                font-size: 1rem;
+            }
+
+            .reaction-buttons {
+                justify-content: center;
+            }
+
+            .chart-container {
+                flex-direction: column;
+                height: auto;
+                align-items: stretch;
+            }
+
+            .chart-bar {
+                height: 40px !important;
+                width: 100%;
+            }
+
+            .bar-label,
+            .bar-value {
+                position: static;
+                display: block;
+                text-align: left;
+                padding: 0.5rem;
+            }
+
+            .messages-pagination {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .guestbook-form-section,
+            .guestbook-intro {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+
+    <!-- Guestbook Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Guestbook State
+            let messages = [];
+            let currentPage = 1;
+            const messagesPerPage = 5;
+            let sortBy = 'newest';
+            let searchQuery = '';
+
+            // Initialize sample messages
+            function initializeMessages() {
+                messages = [
+                    {
+                        id: 1,
+                        name: 'Ali Raza',
+                        email: 'ali@example.com',
+                        relation: 'Friend',
+                        location: 'Karachi, Pakistan',
+                        message: 'Congratulations to both of you! Wishing you a lifetime of happiness and love. May Allah bless your marriage with prosperity and joy.',
+                        privacy: 'public',
+                        reactions: ['❤️', '🎉'],
+                        likes: 24,
+                        photo: null,
+                        date: '2026-11-15T20:30:00',
+                        tags: ['Friend', 'Blessings']
+                    },
+                    {
+                        id: 2,
+                        name: 'Fatima Khan',
+                        email: 'fatima@example.com',
+                        relation: 'Cousin',
+                        location: 'Lahore, Pakistan',
+                        message: 'So happy for you both! I\'ve watched your love story grow and it\'s truly inspiring. Wishing you endless happiness together.',
+                        privacy: 'public',
+                        reactions: ['💕'],
+                        likes: 18,
+                        photo: null,
+                        date: '2026-11-15T18:45:00',
+                        tags: ['Family', 'Congratulations']
+                    },
+                    {
+                        id: 3,
+                        name: 'Ahmed Malik',
+                        email: 'ahmed@example.com',
+                        relation: 'Colleague',
+                        location: 'Islamabad, Pakistan',
+                        message: 'Working with Rohan has been a pleasure, and now seeing him so happy with Aisha warms my heart. Best wishes for your future together!',
+                        privacy: 'public',
+                        reactions: ['🌟', '😊'],
+                        likes: 15,
+                        photo: null,
+                        date: '2026-11-15T16:20:00',
+                        tags: ['Colleague', 'Best Wishes']
+                    },
+                    {
+                        id: 4,
+                        name: 'Sana Javed',
+                        email: 'sana@example.com',
+                        relation: 'Friend',
+                        location: 'Dubai, UAE',
+                        message: 'Though I couldn\'t be there in person, my heart is with you both. Your wedding celebrations looked absolutely beautiful!',
+                        privacy: 'public',
+                        reactions: ['🙏'],
+                        likes: 22,
+                        photo: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80',
+                        date: '2026-11-15T14:10:00',
+                        tags: ['Friend', 'International']
+                    },
+                    {
+                        id: 5,
+                        name: 'Bilal Hassan',
+                        email: 'bilal@example.com',
+                        relation: 'Relative',
+                        location: 'London, UK',
+                        message: 'From across the miles, sending you both warmest congratulations. May your marriage be filled with love, laughter, and beautiful memories.',
+                        privacy: 'public',
+                        reactions: ['❤️', '🌟'],
+                        likes: 19,
+                        photo: null,
+                        date: '2026-11-15T12:30:00',
+                        tags: ['Relative', 'International']
+                    }
+                ];
+
+                // Load messages from localStorage if available
+                const savedMessages = localStorage.getItem('guestbookMessages');
+                if (savedMessages) {
+                    const parsedMessages = JSON.parse(savedMessages);
+                    messages = [...parsedMessages, ...messages];
+                }
+
+                renderMessages();
+            }
+
+            // Character counter
+            const guestMessage = document.getElementById('guestMessage');
+            const charCount = document.getElementById('charCount');
+
+            if (guestMessage && charCount) {
+                guestMessage.addEventListener('input', function () {
+                    const count = this.value.length;
+                    charCount.textContent = count;
+
+                    if (count > 1000) {
+                        charCount.style.color = '#f44336';
+                    } else if (count > 800) {
+                        charCount.style.color = '#ff9800';
+                    } else {
+                        charCount.style.color = '#666';
+                    }
+                });
+            }
+
+            // Format buttons
+            const formatButtons = document.querySelectorAll('.format-btn');
+            formatButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const format = this.dataset.format;
+                    const textarea = document.getElementById('guestMessage');
+                    const start = textarea.selectionStart;
+                    const end = textarea.selectionEnd;
+                    const selectedText = textarea.value.substring(start, end);
+
+                    let formattedText = '';
+                    switch (format) {
+                        case 'bold':
+                            formattedText = `**${selectedText}**`;
+                            break;
+                        case 'italic':
+                            formattedText = `*${selectedText}*`;
+                            break;
+                        case 'heart':
+                            formattedText = `${selectedText} ❤️`;
+                            break;
+                    }
+
+                    textarea.value = textarea.value.substring(0, start) +
+                        formattedText +
+                        textarea.value.substring(end);
+
+                    // Update cursor position
+                    textarea.focus();
+                    textarea.selectionStart = textarea.selectionEnd = start + formattedText.length;
+
+                    // Update character count
+                    if (guestMessage && charCount) {
+                        charCount.textContent = textarea.value.length;
+                    }
+                });
+            });
+
+            // Reaction buttons
+            const reactionButtons = document.querySelectorAll('.reaction-btn');
+            reactionButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const reaction = this.dataset.reaction;
+                    const textarea = document.getElementById('guestMessage');
+                    const cursorPos = textarea.selectionStart;
+
+                    textarea.value = textarea.value.substring(0, cursorPos) +
+                        reaction + ' ' +
+                        textarea.value.substring(cursorPos);
+
+                    textarea.focus();
+                    textarea.selectionStart = textarea.selectionEnd = cursorPos + reaction.length + 1;
+
+                    // Update character count
+                    if (guestMessage && charCount) {
+                        charCount.textContent = textarea.value.length;
+                    }
+                });
+            });
+
+            // Photo upload
+            const photoUploadArea = document.getElementById('photoUploadArea');
+            const photoUpload = document.getElementById('photoUpload');
+            const photoPreview = document.getElementById('photoPreview');
+
+            if (photoUploadArea && photoUpload) {
+                photoUploadArea.addEventListener('click', function () {
+                    photoUpload.click();
+                });
+
+                photoUpload.addEventListener('change', function (e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        if (file.size > 2 * 1024 * 1024) {
+                            alert('File size must be less than 2MB');
+                            return;
+                        }
+
+                        if (!file.type.match('image.*')) {
+                            alert('Please select an image file');
+                            return;
+                        }
+
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            const previewItem = document.createElement('div');
+                            previewItem.className = 'preview-image';
+                            previewItem.innerHTML = `
+                                <img src="${e.target.result}" alt="Preview">
+                                <button class="remove-preview" type="button">&times;</button>
+                            `;
+
+                            // Add remove functionality
+                            previewItem.querySelector('.remove-preview').addEventListener('click', function () {
+                                previewItem.remove();
+                                photoUpload.value = '';
+                            });
+
+                            photoPreview.innerHTML = '';
+                            photoPreview.appendChild(previewItem);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                // Drag and drop
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    photoUploadArea.addEventListener(eventName, preventDefaults, false);
+                });
+
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    photoUploadArea.addEventListener(eventName, highlight, false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    photoUploadArea.addEventListener(eventName, unhighlight, false);
+                });
+
+                function highlight() {
+                    photoUploadArea.style.borderColor = '#ff5722';
+                    photoUploadArea.style.background = 'rgba(255, 87, 34, 0.05)';
+                }
+
+                function unhighlight() {
+                    photoUploadArea.style.borderColor = '#ddd';
+                    photoUploadArea.style.background = '';
+                }
+
+                photoUploadArea.addEventListener('drop', function (e) {
+                    const dt = e.dataTransfer;
+                    const files = dt.files;
+                    if (files.length > 0) {
+                        photoUpload.files = files;
+                        photoUpload.dispatchEvent(new Event('change'));
+                    }
+                });
+            }
+
+            // Preview functionality
+            const previewModal = document.getElementById('previewModal');
+            const previewMessageBtn = document.getElementById('previewMessage');
+            const previewCloseBtns = document.querySelectorAll('.preview-close');
+            const messagePreview = document.getElementById('messagePreview');
+            const confirmPostBtn = document.getElementById('confirmPost');
+
+            if (previewMessageBtn) {
+                previewMessageBtn.addEventListener('click', function () {
+                    if (validateForm(true)) {
+                        showPreview();
+                    }
+                });
+            }
+
+            function showPreview() {
+                const name = document.getElementById('guestName').value;
+                const relation = document.getElementById('guestRelation').value;
+                const location = document.getElementById('guestLocation').value;
+                const message = document.getElementById('guestMessage').value;
+                const privacy = document.querySelector('input[name="privacy"]:checked').value;
+
+                // Format message with basic markdown
+                let formattedMessage = message
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+                // Get avatar initial
+                const avatarInitial = name.charAt(0).toUpperCase();
+
+                messagePreview.innerHTML = `
+                    <div class="message-card">
+                        <div class="message-header">
+                            <div class="guest-avatar">${avatarInitial}</div>
+                            <div class="guest-info">
+                                <h4>${name}</h4>
+                                <p class="guest-relation">${getRelationLabel(relation)} • ${location || 'Location not specified'}</p>
+                            </div>
+                            <div class="message-date">
+                                <i class="far fa-calendar"></i> Just now
+                            </div>
+                        </div>
+                        <div class="message-content">
+                            <p>${formattedMessage}</p>
+                            ${photoPreview.innerHTML ? `
+                                <div class="message-photo">
+                                    ${photoPreview.innerHTML}
+                                </div>
+                            ` : ''}
+                            <div class="message-reactions">
+                                <span class="reaction">❤️</span>
+                            </div>
+                        </div>
+                        <div class="message-footer">
+                            <div class="like-count">
+                                <i class="far fa-heart"></i> 0
+                            </div>
+                            <div class="message-tags">
+                                <span class="tag">${getRelationLabel(relation)}</span>
+                                ${privacy === 'private' ? '<span class="tag">Private</span>' : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                previewModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close preview modal
+            previewCloseBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    previewModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close modal on background click
+            previewModal.addEventListener('click', function (e) {
+                if (e.target === previewModal) {
+                    previewModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close modal on ESC key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && previewModal.classList.contains('active')) {
+                    previewModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Confirm post from preview
+            if (confirmPostBtn) {
+                confirmPostBtn.addEventListener('click', function () {
+                    submitForm();
+                    previewModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Form submission
+            const guestbookForm = document.getElementById('guestbookForm');
+
+            if (guestbookForm) {
+                guestbookForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    if (validateForm()) {
+                        submitForm();
+                    }
+                });
+            }
+
+            function validateForm(isPreview = false) {
+                const name = document.getElementById('guestName').value.trim();
+                const relation = document.getElementById('guestRelation').value;
+                const message = document.getElementById('guestMessage').value.trim();
+                const terms = document.getElementById('termsAgree').checked;
+
+                if (!name) {
+                    alert('Please enter your name');
+                    return false;
+                }
+
+                if (!relation) {
+                    alert('Please select your relationship to the couple');
+                    return false;
+                }
+
+                if (!message) {
+                    alert('Please write your message');
+                    return false;
+                }
+
+                if (message.length > 1000) {
+                    alert('Message must be 1000 characters or less');
+                    return false;
+                }
+
+                if (!terms && !isPreview) {
+                    alert('Please agree to the terms');
+                    return false;
+                }
+
+                return true;
+            }
+
+            function submitForm() {
+                const name = document.getElementById('guestName').value.trim();
+                const email = document.getElementById('guestEmail').value.trim();
+                const relation = document.getElementById('guestRelation').value;
+                const location = document.getElementById('guestLocation').value.trim();
+                const message = document.getElementById('guestMessage').value.trim();
+                const privacy = document.querySelector('input[name="privacy"]:checked').value;
+
+                // Get photo data if exists
+                let photoData = null;
+                const previewImage = photoPreview.querySelector('img');
+                if (previewImage) {
+                    photoData = previewImage.src;
+                }
+
+                // Create new message object
+                const newMessage = {
+                    id: Date.now(),
+                    name: name,
+                    email: email || null,
+                    relation: relation,
+                    location: location || null,
+                    message: message,
+                    privacy: privacy,
+                    reactions: ['❤️'],
+                    likes: 0,
+                    photo: photoData,
+                    date: new Date().toISOString(),
+                    tags: [getRelationLabel(relation)]
+                };
+
+                // Add to messages array
+                messages.unshift(newMessage);
+
+                // Save to localStorage
+                saveMessagesToStorage();
+
+                // Render messages
+                renderMessages();
+
+                // Reset form
+                guestbookForm.reset();
+                photoPreview.innerHTML = '';
+                charCount.textContent = '0';
+
+                // Show success message
+                showSuccessMessage(name);
+
+                // Update statistics
+                updateStatistics();
+            }
+
+            function showSuccessMessage(name) {
+                // Create success message element
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-message-alert';
+                successDiv.innerHTML = `
+                    <div class="success-content">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Thank you, ${name}!</h4>
+                            <p>Your message has been posted to the guestbook.</p>
+                        </div>
+                        <button class="close-alert">&times;</button>
+                    </div>
+                `;
+
+                // Style the alert
+                successDiv.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    max-width: 400px;
+                    background: #4CAF50;
+                    color: white;
+                    border-radius: 15px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    animation: slideInRight 0.3s ease;
+                `;
+
+                successDiv.querySelector('.success-content').style.cssText = `
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1.5rem;
+                `;
+
+                successDiv.querySelector('i').style.cssText = `
+                    font-size: 2rem;
+                `;
+
+                successDiv.querySelector('.close-alert').style.cssText = `
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    margin-left: auto;
+                `;
+
+                // Add close functionality
+                successDiv.querySelector('.close-alert').addEventListener('click', function () {
+                    successDiv.remove();
+                });
+
+                // Add to page
+                document.body.appendChild(successDiv);
+
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    if (successDiv.parentElement) {
+                        successDiv.remove();
+                    }
+                }, 5000);
+            }
+
+            // Sort and filter functionality
+            const sortMessages = document.getElementById('sortMessages');
+            const searchMessages = document.getElementById('searchMessages');
+
+            if (sortMessages) {
+                sortMessages.addEventListener('change', function () {
+                    sortBy = this.value;
+                    currentPage = 1;
+                    renderMessages();
+                });
+            }
+
+            if (searchMessages) {
+                searchMessages.addEventListener('input', function () {
+                    searchQuery = this.value.toLowerCase();
+                    currentPage = 1;
+                    renderMessages();
+                });
+            }
+
+            // Pagination
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+            const currentPageSpan = document.getElementById('currentPage');
+            const totalPagesSpan = document.getElementById('totalPages');
+
+            if (prevPageBtn) {
+                prevPageBtn.addEventListener('click', function () {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        renderMessages();
+                    }
+                });
+            }
+
+            if (nextPageBtn) {
+                nextPageBtn.addEventListener('click', function () {
+                    const filteredMessages = getFilteredMessages();
+                    const totalPages = Math.ceil(filteredMessages.length / messagesPerPage);
+
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        renderMessages();
+                    }
+                });
+            }
+
+            // Render messages
+            function renderMessages() {
+                const messagesContainer = document.getElementById('messagesContainer');
+                if (!messagesContainer) return;
+
+                const filteredMessages = getFilteredMessages();
+                const totalPages = Math.ceil(filteredMessages.length / messagesPerPage);
+
+                // Calculate pagination
+                const startIndex = (currentPage - 1) * messagesPerPage;
+                const endIndex = startIndex + messagesPerPage;
+                const pageMessages = filteredMessages.slice(startIndex, endIndex);
+
+                // Clear container
+                messagesContainer.innerHTML = '';
+
+                // Render messages
+                if (pageMessages.length === 0) {
+                    messagesContainer.innerHTML = `
+                        <div class="no-messages">
+                            <i class="fas fa-comment-slash"></i>
+                            <h3>No messages found</h3>
+                            <p>${searchQuery ? 'Try a different search term' : 'Be the first to leave a message!'}</p>
+                        </div>
+                    `;
+                } else {
+                    pageMessages.forEach(message => {
+                        const messageElement = createMessageElement(message);
+                        messagesContainer.appendChild(messageElement);
+                    });
+                }
+
+                // Update pagination controls
+                if (prevPageBtn && nextPageBtn && currentPageSpan && totalPagesSpan) {
+                    prevPageBtn.disabled = currentPage === 1;
+                    nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
+                    currentPageSpan.textContent = currentPage;
+                    totalPagesSpan.textContent = totalPages || 1;
+                }
+            }
+
+            function getFilteredMessages() {
+                let filtered = messages.filter(message => message.privacy === 'public');
+
+                // Apply search filter
+                if (searchQuery) {
+                    filtered = filtered.filter(message =>
+                        message.name.toLowerCase().includes(searchQuery) ||
+                        message.message.toLowerCase().includes(searchQuery) ||
+                        message.location?.toLowerCase().includes(searchQuery) ||
+                        message.tags.some(tag => tag.toLowerCase().includes(searchQuery))
+                    );
+                }
+
+                // Apply sorting
+                switch (sortBy) {
+                    case 'newest':
+                        filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+                        break;
+                    case 'oldest':
+                        filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+                        break;
+                    case 'likes':
+                        filtered.sort((a, b) => b.likes - a.likes);
+                        break;
+                    case 'family':
+                        // Family first, then others
+                        filtered.sort((a, b) => {
+                            const aIsFamily = a.relation === 'family' || a.relation === 'relative';
+                            const bIsFamily = b.relation === 'family' || b.relation === 'relative';
+
+                            if (aIsFamily && !bIsFamily) return -1;
+                            if (!aIsFamily && bIsFamily) return 1;
+                            return new Date(b.date) - new Date(a.date);
+                        });
+                        break;
+                }
+
+                return filtered;
+            }
+
+            function createMessageElement(message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message-card';
+                messageDiv.dataset.id = message.id;
+
+                // Format date
+                const date = new Date(message.date);
+                const now = new Date();
+                const diffTime = Math.abs(now - date);
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+                let dateText;
+                if (diffDays === 0) {
+                    const diffHours = Math.floor(diffTime / (1000 * 60 * 60));
+                    if (diffHours === 0) {
+                        const diffMinutes = Math.floor(diffTime / (1000 * 60));
+                        dateText = `${diffMinutes} minute${diffMinutes !== 1 ? 's' : ''} ago`;
+                    } else {
+                        dateText = `${diffHours} hour${diffHours !== 1 ? 's' : ''} ago`;
+                    }
+                } else if (diffDays === 1) {
+                    dateText = 'Yesterday';
+                } else if (diffDays < 7) {
+                    dateText = `${diffDays} days ago`;
+                } else {
+                    dateText = date.toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined
+                    });
+                }
+
+                // Get avatar initial
+                const avatarInitial = message.name.charAt(0).toUpperCase();
+
+                // Format message with basic markdown
+                let formattedMessage = message.message
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+                messageDiv.innerHTML = `
+                    <div class="message-header">
+                        <div class="guest-avatar">${avatarInitial}</div>
+                        <div class="guest-info">
+                            <h4>${message.name}</h4>
+                            <p class="guest-relation">${getRelationLabel(message.relation)}${message.location ? ` • ${message.location}` : ''}</p>
+                        </div>
+                        <div class="message-date">
+                            <i class="far fa-calendar"></i> ${dateText}
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p>${formattedMessage}</p>
+                        ${message.photo ? `
+                            <div class="message-photo">
+                                <img src="${message.photo}" alt="Photo from ${message.name}">
+                            </div>
+                        ` : ''}
+                        ${message.reactions && message.reactions.length > 0 ? `
+                            <div class="message-reactions">
+                                ${message.reactions.map(reaction => `<span class="reaction">${reaction}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="message-footer">
+                        <div class="like-count" data-id="${message.id}">
+                            <i class="${message.likes > 0 ? 'fas' : 'far'} fa-heart"></i> ${message.likes}
+                        </div>
+                        <div class="message-tags">
+                            ${message.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+
+                // Add like functionality
+                const likeCount = messageDiv.querySelector('.like-count');
+                if (likeCount) {
+                    likeCount.addEventListener('click', function () {
+                        const messageId = parseInt(this.dataset.id);
+                        const messageIndex = messages.findIndex(m => m.id === messageId);
+
+                        if (messageIndex !== -1) {
+                            // Check if user already liked this message
+                            const likedMessages = JSON.parse(localStorage.getItem('likedMessages') || '[]');
+
+                            if (likedMessages.includes(messageId)) {
+                                // Unlike
+                                messages[messageIndex].likes--;
+                                likedMessages.splice(likedMessages.indexOf(messageId), 1);
+                                this.querySelector('i').classList.remove('fas');
+                                this.querySelector('i').classList.add('far');
+                            } else {
+                                // Like
+                                messages[messageIndex].likes++;
+                                likedMessages.push(messageId);
+                                this.querySelector('i').classList.remove('far');
+                                this.querySelector('i').classList.add('fas');
+                            }
+
+                            // Update the count
+                            this.querySelector('i').nextSibling.textContent = ` ${messages[messageIndex].likes}`;
+
+                            // Save to localStorage
+                            localStorage.setItem('likedMessages', JSON.stringify(likedMessages));
+                            saveMessagesToStorage();
+
+                            // Update statistics
+                            updateStatistics();
+                        }
+                    });
+                }
+
+                return messageDiv;
+            }
+
+            // Helper functions
+            function getRelationLabel(relation) {
+                const relations = {
+                    'family': 'Family Member',
+                    'friend': 'Friend',
+                    'colleague': 'Colleague',
+                    'relative': 'Relative',
+                    'other': 'Guest'
+                };
+                return relations[relation] || relation;
+            }
+
+            function saveMessagesToStorage() {
+                localStorage.setItem('guestbookMessages', JSON.stringify(messages));
+            }
+
+            function updateStatistics() {
+                // Update message count
+                const messageCount = messages.filter(m => m.privacy === 'public').length;
+                const likeCount = messages.reduce((sum, message) => sum + message.likes, 0);
+
+                // Update stat cards
+                const statCards = document.querySelectorAll('.stat-card h3');
+                if (statCards.length >= 2) {
+                    statCards[0].textContent = messageCount;
+                    statCards[1].textContent = likeCount;
+                }
+
+                // Update guestbook stats
+                const guestbookStats = document.querySelector('.guestbook-stats span:first-child');
+                if (guestbookStats) {
+                    guestbookStats.innerHTML = `<i class="fas fa-pen"></i> ${messageCount} Messages`;
+                }
+            }
+
+            // Download PDF functionality
+            const downloadPDFBtn = document.getElementById('downloadPDF');
+            if (downloadPDFBtn) {
+                downloadPDFBtn.addEventListener('click', function () {
+                    alert('In a real application, this would generate and download a PDF of all guestbook messages.\n\nFor demo purposes, this feature is simulated.');
+                });
+            }
+
+            // Print functionality
+            const printGuestbookBtn = document.getElementById('printGuestbook');
+            if (printGuestbookBtn) {
+                printGuestbookBtn.addEventListener('click', function () {
+                    window.print();
+                });
+            }
+
+            // Social share functionality
+            const socialButtons = document.querySelectorAll('.social-btn');
+            socialButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const platform = this.dataset.platform;
+                    const url = window.location.href;
+                    const title = 'Aisha & Rohan Wedding Guestbook';
+                    const text = 'Leave your warm wishes for Aisha & Rohan!';
+
+                    switch (platform) {
+                        case 'facebook':
+                            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                            break;
+                        case 'twitter':
+                            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                            break;
+                        case 'whatsapp':
+                            window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+                            break;
+                        case 'link':
+                            navigator.clipboard.writeText(url).then(() => {
+                                alert('Guestbook link copied to clipboard!');
+                            });
+                            break;
+                    }
+                });
+            });
+
+            // Initialize
+            initializeMessages();
+            updateStatistics();
+
+            // Check for liked messages from localStorage
+            const likedMessages = JSON.parse(localStorage.getItem('likedMessages') || '[]');
+            likedMessages.forEach(messageId => {
+                const messageIndex = messages.findIndex(m => m.id === messageId);
+                if (messageIndex !== -1) {
+                    messages[messageIndex].likes++;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

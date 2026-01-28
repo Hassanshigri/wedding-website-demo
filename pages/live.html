@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stream - Aisha & Rohan's Wedding</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Aisha & Rohan</a>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="love-story.html"><i class="fas fa-heart"></i> Love Story</a></li>
+                <li><a href="mehndi.html"><i class="fas fa-paint-brush"></i> Mehndi</a></li>
+                <li><a href="barat.html"><i class="fas fa-gem"></i> Barat</a></li>
+                <li><a href="walima.html"><i class="fas fa-utensils"></i> Walima</a></li>
+                <li><a href="rsvp.html"><i class="fas fa-envelope"></i> RSVP</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="guestbook.html"><i class="fas fa-book"></i> Guestbook</a></li>
+                <li><a href="live.html" class="active"><i class="fas fa-video"></i> Live</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header"
+        style="background: linear-gradient(rgba(0, 150, 136, 0.8), rgba(0, 150, 136, 0.8)), 
+                url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="container">
+            <h1>Live Stream</h1>
+            <p>Watch our wedding celebrations live from anywhere in the world</p>
+            <div class="live-status-banner">
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text" id="statusText">Checking Status...</span>
+                </div>
+                <div class="viewer-count">
+                    <i class="fas fa-eye"></i> <span id="viewerCount">0</span> viewers online
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Main Video Player -->
+            <div class="live-player-section">
+                <div class="player-container">
+                    <div class="video-player" id="videoPlayer">
+                        <div class="player-placeholder" id="playerPlaceholder">
+                            <div class="placeholder-content">
+                                <i class="fas fa-satellite-dish"></i>
+                                <h3>Live Stream</h3>
+                                <p>Stream will begin automatically when live</p>
+                                <div class="countdown-to-live" id="countdownToLive">
+                                    <h4>Next Live Event:</h4>
+                                    <div class="countdown-timer">
+                                        <div class="countdown-item">
+                                            <span id="cd-days">00</span>
+                                            <small>Days</small>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span id="cd-hours">00</span>
+                                            <small>Hours</small>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span id="cd-minutes">00</span>
+                                            <small>Minutes</small>
+                                        </div>
+                                        <div class="countdown-item">
+                                            <span id="cd-seconds">00</span>
+                                            <small>Seconds</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-controls" id="videoControls" style="display: none;">
+                            <div class="control-bar">
+                                <button class="control-btn" id="playPauseBtn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="progress-bar">
+                                    <input type="range" id="progressSlider" min="0" max="100" value="0">
+                                    <div class="progress-time">
+                                        <span id="currentTime">00:00</span> / <span id="totalTime">00:00</span>
+                                    </div>
+                                </div>
+                                <button class="control-btn" id="muteBtn">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                                <input type="range" id="volumeSlider" min="0" max="100" value="80">
+                                <button class="control-btn" id="fullscreenBtn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="player-info">
+                        <div class="info-header">
+                            <h3 id="streamTitle">Aisha & Rohan's Wedding Live</h3>
+                            <div class="stream-quality">
+                                <select id="qualitySelector">
+                                    <option value="auto">Auto</option>
+                                    <option value="720p">720p HD</option>
+                                    <option value="480p">480p</option>
+                                    <option value="360p">360p</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="stream-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <h5>Event Date</h5>
+                                    <p id="eventDate">February 14-15, 2026</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h5>Stream Time</h5>
+                                    <p id="streamTime">7:00 PM - 11:00 PM (PKT)</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h5>Venue</h5>
+                                    <p id="streamVenue">Royal Convention Center, Karachi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h4><i class="fas fa-comments"></i> Live Chat</h4>
+                        <div class="chat-stats">
+                            <span id="chatCount">0</span> participants
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="system-message">
+                            <div class="message-content">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Welcome to the live chat! Please be respectful and kind in your messages.</p>
+                            </div>
+                        </div>
+                        <div class="system-message">
+                            <div class="message-content">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Stream will begin automatically when the event goes live.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <div class="input-container">
+                            <input type="text" id="chatInput" placeholder="Type your message here..." maxlength="200">
+                            <div class="input-actions">
+                                <button class="action-btn" id="emojiBtn">
+                                    <i class="far fa-smile"></i>
+                                </button>
+                                <button class="action-btn" id="sendChatBtn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="chat-rules">
+                            <small><i class="fas fa-exclamation-circle"></i> Messages are moderated. Please keep chat
+                                respectful.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule Section -->
+            <div class="schedule-section">
+                <h2 class="section-title"><i class="fas fa-calendar-star"></i> Live Stream Schedule</h2>
+                <p class="section-subtitle">Upcoming events that will be streamed live</p>
+
+                <div class="schedule-timeline">
+                    <div class="schedule-item upcoming">
+                        <div class="schedule-time">
+                            <div class="time-date">Nov 14</div>
+                            <div class="time-hours">6:00 PM</div>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="content-header">
+                                <h4>Barat Night - Nikkah Ceremony</h4>
+                                <span class="live-badge">LIVE</span>
+                            </div>
+                            <p>Witness the sacred Nikkah ceremony and traditional Barat celebrations</p>
+                            <div class="content-meta">
+                                <span><i class="fas fa-video"></i> Multi-camera coverage</span>
+                                <span><i class="fas fa-microphone"></i> Live commentary</span>
+                                <span><i class="fas fa-clock"></i> 3 hours duration</span>
+                            </div>
+                        </div>
+                        <button class="schedule-btn set-reminder" data-event="barat">
+                            <i class="far fa-bell"></i> Remind Me
+                        </button>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-time">
+                            <div class="time-date">Nov 15</div>
+                            <div class="time-hours">8:00 PM</div>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="content-header">
+                                <h4>Walima Night - Grand Reception</h4>
+                                <span class="upcoming-badge">UPCOMING</span>
+                            </div>
+                            <p>Join us for the grand Walima reception with dinner and celebrations</p>
+                            <div class="content-meta">
+                                <span><i class="fas fa-video"></i> Multi-camera coverage</span>
+                                <span><i class="fas fa-microphone"></i> Live commentary</span>
+                                <span><i class="fas fa-clock"></i> 4 hours duration</span>
+                            </div>
+                        </div>
+                        <button class="schedule-btn set-reminder" data-event="walima">
+                            <i class="far fa-bell"></i> Remind Me
+                        </button>
+                    </div>
+
+                    <div class="schedule-item past">
+                        <div class="schedule-time">
+                            <div class="time-date">Nov 13</div>
+                            <div class="time-hours">7:00 PM</div>
+                        </div>
+                        <div class="schedule-content">
+                            <div class="content-header">
+                                <h4>Mehndi Night - Completed</h4>
+                                <span class="past-badge">WATCH REPLAY</span>
+                            </div>
+                            <p>Traditional Mehndi ceremony with music and dance performances</p>
+                            <div class="content-meta">
+                                <span><i class="fas fa-video"></i> Recording available</span>
+                                <span><i class="fas fa-clock"></i> 2 hours 30 minutes</span>
+                                <span><i class="fas fa-eye"></i> 1.2K views</span>
+                            </div>
+                        </div>
+                        <button class="schedule-btn watch-replay" data-event="mehndi">
+                            <i class="fas fa-play"></i> Watch Replay
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Information -->
+            <div class="technical-section">
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="tech-content">
+                            <h4>Stream Quality</h4>
+                            <p>1080p HD with adaptive bitrate</p>
+                            <div class="quality-indicator">
+                                <div class="quality-bar excellent"></div>
+                                <span>Excellent Connection</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <div class="tech-content">
+                            <h4>Broadcast Team</h4>
+                            <p>Professional crew with 4 cameras</p>
+                            <ul class="tech-list">
+                                <li>Main Camera - Stage</li>
+                                <li>Close-up Camera - Ceremony</li>
+                                <li>Guest Camera - Reactions</li>
+                                <li>Mobile Camera - Dynamic shots</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="tech-content">
+                            <h4>Audio Quality</h4>
+                            <p>Crystal clear stereo sound</p>
+                            <div class="audio-settings">
+                                <div class="setting-item">
+                                    <span>Live Commentary</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="commentaryToggle" checked>
+                                        <label for="commentaryToggle"></label>
+                                    </div>
+                                </div>
+                                <div class="setting-item">
+                                    <span>Background Music</span>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="musicToggle" checked>
+                                        <label for="musicToggle"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="tech-content">
+                            <h4>Global Access</h4>
+                            <p>Watch from anywhere in the world</p>
+                            <div class="access-info">
+                                <div class="access-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Mobile Friendly</span>
+                                </div>
+                                <div class="access-item">
+                                    <i class="fas fa-desktop"></i>
+                                    <span>Desktop Optimized</span>
+                                </div>
+                                <div class="access-item">
+                                    <i class="fas fa-tablet-alt"></i>
+                                    <span>Tablet Ready</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- International Viewers -->
+            <div class="international-section">
+                <h2 class="section-title"><i class="fas fa-globe-americas"></i> For International Viewers</h2>
+
+                <div class="timezone-converter">
+                    <div class="timezone-card">
+                        <h4><i class="fas fa-clock"></i> Time Zone Converter</h4>
+                        <div class="converter-form">
+                            <div class="form-group">
+                                <label>Event Time (PKT):</label>
+                                <div class="time-display">6:00 PM, February 14</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="timezoneSelect">Your Time Zone:</label>
+                                <select id="timezoneSelect">
+                                    <option value="EST">Eastern Time (EST)</option>
+                                    <option value="PST">Pacific Time (PST)</option>
+                                    <option value="GMT">GMT/London</option>
+                                    <option value="CET">Central Europe (CET)</option>
+                                    <option value="GST">Gulf Standard Time</option>
+                                    <option value="AEST">Australia (AEST)</option>
+                                    <option value="IST">India (IST)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Local Time:</label>
+                                <div class="time-display converted" id="convertedTime">
+                                    8:00 AM, February 14
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tips-card">
+                        <h4><i class="fas fa-lightbulb"></i> Viewing Tips</h4>
+                        <ul class="tips-list">
+                            <li><i class="fas fa-wifi"></i> Use stable internet connection</li>
+                            <li><i class="fas fa-volume-up"></i> Headphones recommended for best audio</li>
+                            <li><i class="fas fa-desktop"></i> Desktop/laptop for best viewing experience</li>
+                            <li><i class="fas fa-sync-alt"></i> Refresh page if stream buffers</li>
+                            <li><i class="fas fa-comments"></i> Join live chat to interact with others</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQs -->
+            <div class="faq-section">
+                <h2 class="section-title"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Do I need a password to watch the live stream?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No password is required for the live stream. All invited guests can watch directly from
+                                this page.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I watch on my mobile phone?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! The live stream is fully optimized for mobile devices, tablets, and desktop
+                                computers.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Will the stream be available after the event?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, recordings will be available on this page for 30 days after the wedding.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What if I'm having technical issues?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Try refreshing the page, checking your internet connection, or switching to a lower
+                                quality setting. For persistent issues, email live@aishaandrohan.com</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I download the stream to watch offline?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Due to copyright and privacy reasons, downloads are not available. However, you can watch
+                                the recordings online anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="support-section">
+                <div class="support-content">
+                    <div class="support-info">
+                        <h3><i class="fas fa-headset"></i> Need Help?</h3>
+                        <p>Our technical support team is here to assist you with any streaming issues.</p>
+                        <div class="contact-options">
+                            <div class="contact-option">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h5>Email Support</h5>
+                                    <p>live@aishaandrohan.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-option">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h5>Phone Support</h5>
+                                    <p>+92 300 123 4567</p>
+                                </div>
+                            </div>
+                            <div class="contact-option">
+                                <i class="fas fa-comments"></i>
+                                <div>
+                                    <h5>Live Chat</h5>
+                                    <p>Available during stream hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="support-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                            alt="Technical Support">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+                <h3><i class="fas fa-share-alt"></i> Share With Loved Ones</h3>
+                <p>Help friends and family join the celebration by sharing the live stream link</p>
+
+                <div class="share-buttons">
+                    <button class="share-btn facebook">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </button>
+                    <button class="share-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </button>
+                    <button class="share-btn twitter">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </button>
+                    <button class="share-btn email">
+                        <i class="fas fa-envelope"></i> Email
+                    </button>
+                    <button class="share-btn copy">
+                        <i class="fas fa-copy"></i> Copy Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Aisha & Rohan</h3>
+                    <p>Thank you for joining us virtually. Your presence, even from afar, means the world to us.</p>
+                    <div class="stream-reminder">
+                        <p><i class="far fa-bell"></i> <strong>Next Live:</strong> Barat Night, Nov 14, 6:00 PM PKT</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Stream Information</h3>
+                    <p><i class="fas fa-video"></i> Stream Provider: Wedding Live Pro</p>
+                    <p><i class="fas fa-microphone"></i> Commentary: English & Urdu</p>
+                    <p><i class="fas fa-clock"></i> Duration: 3-4 hours per event</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="schedule.html">Event Schedule</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="guestbook.html">Leave a Message</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aisha & Rohan's Wedding. All rights reserved.</p>
+                <p>Live stream powered by Wedding Live Pro • This stream is for invited guests only</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+
+    <!-- Live Page Specific CSS -->
+    <style>
+        .active {
+            color: var(--primary-color) !important;
+            font-weight: 600 !important;
+        }
+
+        .live-status-banner {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            flex-wrap: wrap;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #f44336;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .status-dot.live {
+            background: #4CAF50;
+            animation: pulseLive 1s infinite;
+        }
+
+        @keyframes pulseLive {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .viewer-count {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .viewer-count i {
+            color: #00BCD4;
+        }
+
+        /* Main Player Section */
+        .live-player-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 992px) {
+            .live-player-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .player-container {
+            background: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-player {
+            position: relative;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+            background: #000;
+        }
+
+        .player-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .placeholder-content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .placeholder-content i {
+            font-size: 4rem;
+            color: #00BCD4;
+            margin-bottom: 1rem;
+        }
+
+        .placeholder-content h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-to-live {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .countdown-item span {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00BCD4;
+        }
+
+        .countdown-item small {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .control-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .progress-bar {
+            flex: 1;
+            position: relative;
+        }
+
+        #progressSlider {
+            width: 100%;
+            height: 5px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #progressSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #00BCD4;
+            cursor: pointer;
+        }
+
+        .progress-time {
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        #volumeSlider {
+            width: 80px;
+            height: 5px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #volumeSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00BCD4;
+            cursor: pointer;
+        }
+
+        .player-info {
+            padding: 2rem;
+            background: var(--white);
+        }
+
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-header h3 {
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .stream-quality select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background: var(--white);
+        }
+
+        .stream-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .detail-item i {
+            font-size: 1.5rem;
+            color: #00BCD4;
+            margin-top: 0.3rem;
+        }
+
+        .detail-item h5 {
+            margin: 0 0 0.3rem;
+            color: var(--text-color);
+        }
+
+        .detail-item p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Chat Container */
+        .chat-container {
+            background: var(--white);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #00BCD4, #0097A7);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chat-stats {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            max-height: 400px;
+            background: var(--light-bg);
+        }
+
+        .system-message {
+            margin-bottom: 1rem;
+        }
+
+        .message-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            background: rgba(0, 188, 212, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #00BCD4;
+        }
+
+        .message-content i {
+            color: #00BCD4;
+            margin-top: 0.2rem;
+        }
+
+        .message-content p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .chat-message {
+            margin-bottom: 1rem;
+            animation: slideInRight 0.3s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .chat-message .message-content {
+            background: var(--white);
+            border-left: 4px solid #4CAF50;
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+        }
+
+        .message-sender {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .message-time {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .chat-input {
+            padding: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #chatInput {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-family: inherit;
+        }
+
+        #chatInput:focus {
+            outline: none;
+            border-color: #00BCD4;
+        }
+
+        .input-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            background: #00BCD4;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-btn:hover {
+            background: #0097A7;
+            transform: scale(1.1);
+        }
+
+        .chat-rules {
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* Schedule Section */
+        .schedule-section {
+            margin: 4rem 0;
+        }
+
+        .schedule-timeline {
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid #00BCD4;
+        }
+
+        .schedule-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .schedule-item.upcoming {
+            border-left-color: #4CAF50;
+            background: linear-gradient(to right, rgba(76, 175, 80, 0.05), var(--white));
+        }
+
+        .schedule-item.past {
+            border-left-color: #9E9E9E;
+            opacity: 0.8;
+        }
+
+        .schedule-time {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .time-date {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .time-hours {
+            font-size: 1.5rem;
+            color: #00BCD4;
+            font-weight: 700;
+        }
+
+        .schedule-content {
+            flex: 1;
+        }
+
+        .content-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .content-header h4 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .live-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .upcoming-badge {
+            background: #FF9800;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .past-badge {
+            background: #9E9E9E;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .content-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .content-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .content-meta i {
+            color: #00BCD4;
+        }
+
+        .schedule-btn {
+            padding: 0.8rem 1.5rem;
+            background: #00BCD4;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .schedule-btn:hover {
+            background: #0097A7;
+            transform: translateY(-2px);
+        }
+
+        .schedule-btn.watch-replay {
+            background: #9E9E9E;
+        }
+
+        .schedule-btn.watch-replay:hover {
+            background: #757575;
+        }
+
+        /* Technical Section */
+        .technical-section {
+            margin: 4rem 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .tech-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tech-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #00BCD4, #0097A7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .quality-indicator {
+            margin-top: 1rem;
+        }
+
+        .quality-bar {
+            height: 8px;
+            background: linear-gradient(to right, #4CAF50, #8BC34A);
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .tech-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: #666;
+        }
+
+        .tech-list li:last-child {
+            border-bottom: none;
+        }
+
+        .audio-settings {
+            margin-top: 1rem;
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-switch label {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 34px;
+            transition: .4s;
+        }
+
+        .toggle-switch label:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        .toggle-switch input:checked+label {
+            background-color: #00BCD4;
+        }
+
+        .toggle-switch input:checked+label:before {
+            transform: translateX(26px);
+        }
+
+        .access-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .access-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+
+        .access-item i {
+            font-size: 1.5rem;
+            color: #00BCD4;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* International Section */
+        .international-section {
+            margin: 4rem 0;
+        }
+
+        .timezone-converter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timezone-card,
+        .tips-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .timezone-card h4,
+        .tips-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .converter-form {
+            margin-top: 1.5rem;
+        }
+
+        .time-display {
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-top: 0.5rem;
+        }
+
+        .time-display.converted {
+            background: #E3F2FD;
+            color: #1976D2;
+        }
+
+        .tips-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #666;
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tips-list i {
+            color: #00BCD4;
+            width: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 4rem 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: var(--white);
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--light-bg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Support Section */
+        .support-section {
+            background: linear-gradient(135deg, #00BCD4 0%, #0097A7 100%);
+            color: white;
+            padding: 4rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .support-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .support-info {
+            flex: 1;
+        }
+
+        .support-info h3 {
+            color: white;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-options {
+            margin-top: 2rem;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-option i {
+            font-size: 1.5rem;
+        }
+
+        .contact-option h5 {
+            margin: 0;
+            color: white;
+        }
+
+        .contact-option p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .support-image {
+            flex: 0 0 300px;
+        }
+
+        .support-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Share Section */
+        .share-section {
+            text-align: center;
+            padding: 3rem;
+            background: var(--light-bg);
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .share-section h3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .share-btn.facebook {
+            background: #1877F2;
+            color: white;
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .share-btn.email {
+            background: #EA4335;
+            color: white;
+        }
+
+        .share-btn.copy {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Stream Reminder */
+        .stream-reminder {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .live-status-banner {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .content-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .content-meta {
+                justify-content: center;
+            }
+
+            .support-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .support-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .contact-option {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timezone-converter {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .access-info {
+                grid-template-columns: 1fr;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .share-btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+
+            .video-player {
+                padding-top: 75%;
+                /* 4:3 for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .live-status-banner {
+                padding: 1rem;
+            }
+
+            .countdown-timer {
+                gap: 0.5rem;
+            }
+
+            .countdown-item {
+                min-width: 50px;
+            }
+
+            .countdown-item span {
+                font-size: 1.5rem;
+            }
+
+            .player-info {
+                padding: 1.5rem;
+            }
+
+            .stream-details {
+                grid-template-columns: 1fr;
+            }
+
+            .support-section,
+            .share-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+
+    <!-- Live Page Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Stream Status Management
+            let isLive = false;
+            let viewerCount = 0;
+            let chatParticipants = 0;
+            let streamStartTime = new Date('2026-11-14T18:00:00+05:00'); // Nov 14, 6:00 PM PKT
+
+            // Initialize elements
+            const statusIndicator = document.getElementById('statusIndicator');
+            const statusDot = document.querySelector('.status-dot');
+            const statusText = document.getElementById('statusText');
+            const viewerCountElement = document.getElementById('viewerCount');
+            const playerPlaceholder = document.getElementById('playerPlaceholder');
+            const videoControls = document.getElementById('videoControls');
+            const chatCount = document.getElementById('chatCount');
+
+            // Simulate stream status check
+            function checkStreamStatus() {
+                const now = new Date();
+                const timeUntilStream = streamStartTime - now;
+
+                if (timeUntilStream <= 0) {
+                    // Stream should be live
+                    isLive = true;
+                    statusDot.classList.add('live');
+                    statusText.textContent = 'LIVE NOW';
+
+                    // Update viewer count (simulated)
+                    viewerCount = Math.floor(Math.random() * 100) + 150;
+                    viewerCountElement.textContent = viewerCount.toLocaleString();
+
+                    // Show video controls
+                    videoControls.style.display = 'block';
+
+                    // Update placeholder to show live content
+                    playerPlaceholder.innerHTML = `
+                        <div class="placeholder-content">
+                            <i class="fas fa-satellite-dish"></i>
+                            <h3>Live Stream Starting...</h3>
+                            <p>Stream will begin in a few moments</p>
+                            <div class="stream-loading">
+                                <div class="loading-spinner"></div>
+                                <p>Connecting to live feed...</p>
+                            </div>
+                        </div>
+                    `;
+
+                    // Simulate stream starting after 5 seconds
+                    setTimeout(startSimulatedStream, 5000);
+                } else {
+                    // Stream is upcoming
+                    isLive = false;
+                    statusDot.classList.remove('live');
+                    statusText.textContent = 'UPCOMING';
+
+                    // Update countdown
+                    updateCountdown();
+
+                    // Simulate some viewers waiting
+                    viewerCount = Math.floor(Math.random() * 50) + 20;
+                    viewerCountElement.textContent = viewerCount.toLocaleString();
+                }
+
+                // Update chat participants
+                chatParticipants = Math.floor(viewerCount * 0.3);
+                chatCount.textContent = chatParticipants;
+            }
+
+            // Countdown timer for upcoming stream
+            function updateCountdown() {
+                const now = new Date();
+                const timeUntilStream = streamStartTime - now;
+
+                if (timeUntilStream > 0) {
+                    const days = Math.floor(timeUntilStream / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeUntilStream % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeUntilStream % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeUntilStream % (1000 * 60)) / 1000);
+
+                    document.getElementById('cd-days').textContent = days.toString().padStart(2, '0');
+                    document.getElementById('cd-hours').textContent = hours.toString().padStart(2, '0');
+                    document.getElementById('cd-minutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('cd-seconds').textContent = seconds.toString().padStart(2, '0');
+                }
+            }
+
+            // Simulated stream functionality
+            function startSimulatedStream() {
+                playerPlaceholder.innerHTML = `
+                    <div class="placeholder-content">
+                        <div class="simulated-stream">
+                            <div class="stream-overlay">
+                                <div class="overlay-text">
+                                    <h3><i class="fas fa-circle"></i> LIVE</h3>
+                                    <p>Aisha & Rohan's Barat Night</p>
+                                    <div class="stream-info">
+                                        <span><i class="fas fa-eye"></i> ${viewerCount.toLocaleString()} viewers</span>
+                                        <span><i class="fas fa-clock"></i> 00:12:34</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Start simulated chat
+                startSimulatedChat();
+
+                // Update viewer count periodically
+                setInterval(() => {
+                    if (isLive) {
+                        viewerCount += Math.floor(Math.random() * 10) - 3; // Random change
+                        viewerCount = Math.max(viewerCount, 150); // Minimum 150 viewers
+                        viewerCountElement.textContent = viewerCount.toLocaleString();
+
+                        // Update chat participants
+                        chatParticipants = Math.floor(viewerCount * 0.3);
+                        chatCount.textContent = chatParticipants;
+                    }
+                }, 10000);
+            }
+
+            // Video player controls simulation
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const progressSlider = document.getElementById('progressSlider');
+            const currentTimeElement = document.getElementById('currentTime');
+            const totalTimeElement = document.getElementById('totalTime');
+            const muteBtn = document.getElementById('muteBtn');
+            const volumeSlider = document.getElementById('volumeSlider');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+            let isPlaying = false;
+            let currentTime = 0;
+            let totalTime = 21600; // 6 hours in seconds
+            let isMuted = false;
+            let volume = 80;
+
+            // Format time in MM:SS
+            function formatTime(seconds) {
+                const hrs = Math.floor(seconds / 3600);
+                const mins = Math.floor((seconds % 3600) / 60);
+                const secs = Math.floor(seconds % 60);
+
+                if (hrs > 0) {
+                    return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                }
+                return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            // Initialize time display
+            currentTimeElement.textContent = formatTime(currentTime);
+            totalTimeElement.textContent = formatTime(totalTime);
+
+            // Play/Pause functionality
+            if (playPauseBtn) {
+                playPauseBtn.addEventListener('click', function () {
+                    isPlaying = !isPlaying;
+                    const icon = this.querySelector('i');
+
+                    if (isPlaying) {
+                        icon.classList.remove('fa-play');
+                        icon.classList.add('fa-pause');
+                        simulatePlayback();
+                    } else {
+                        icon.classList.remove('fa-pause');
+                        icon.classList.add('fa-play');
+                    }
+                });
+            }
+
+            // Simulate video playback
+            function simulatePlayback() {
+                if (isPlaying) {
+                    currentTime++;
+                    if (currentTime > totalTime) {
+                        currentTime = totalTime;
+                        isPlaying = false;
+                        playPauseBtn.querySelector('i').classList.remove('fa-pause');
+                        playPauseBtn.querySelector('i').classList.add('fa-play');
+                    }
+
+                    // Update display
+                    currentTimeElement.textContent = formatTime(currentTime);
+                    progressSlider.value = (currentTime / totalTime) * 100;
+
+                    // Continue simulation
+                    setTimeout(simulatePlayback, 1000);
+                }
+            }
+
+            // Progress slider
+            if (progressSlider) {
+                progressSlider.addEventListener('input', function () {
+                    currentTime = (this.value / 100) * totalTime;
+                    currentTimeElement.textContent = formatTime(currentTime);
+                });
+            }
+
+            // Mute functionality
+            if (muteBtn) {
+                muteBtn.addEventListener('click', function () {
+                    isMuted = !isMuted;
+                    const icon = this.querySelector('i');
+
+                    if (isMuted) {
+                        icon.classList.remove('fa-volume-up');
+                        icon.classList.add('fa-volume-mute');
+                        volumeSlider.value = 0;
+                    } else {
+                        icon.classList.remove('fa-volume-mute');
+                        icon.classList.add('fa-volume-up');
+                        volumeSlider.value = volume;
+                    }
+                });
+            }
+
+            // Volume slider
+            if (volumeSlider) {
+                volumeSlider.addEventListener('input', function () {
+                    volume = this.value;
+                    if (volume > 0 && isMuted) {
+                        isMuted = false;
+                        muteBtn.querySelector('i').classList.remove('fa-volume-mute');
+                        muteBtn.querySelector('i').classList.add('fa-volume-up');
+                    }
+                });
+            }
+
+            // Fullscreen functionality
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', function () {
+                    const videoPlayer = document.getElementById('videoPlayer');
+
+                    if (!document.fullscreenElement) {
+                        if (videoPlayer.requestFullscreen) {
+                            videoPlayer.requestFullscreen();
+                        } else if (videoPlayer.webkitRequestFullscreen) {
+                            videoPlayer.webkitRequestFullscreen();
+                        } else if (videoPlayer.msRequestFullscreen) {
+                            videoPlayer.msRequestFullscreen();
+                        }
+
+                        this.querySelector('i').classList.remove('fa-expand');
+                        this.querySelector('i').classList.add('fa-compress');
+                    } else {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        } else if (document.webkitExitFullscreen) {
+                            document.webkitExitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
+                        }
+
+                        this.querySelector('i').classList.remove('fa-compress');
+                        this.querySelector('i').classList.add('fa-expand');
+                    }
+                });
+            }
+
+            // Chat functionality
+            const chatMessages = document.getElementById('chatMessages');
+            const chatInput = document.getElementById('chatInput');
+            const sendChatBtn = document.getElementById('sendChatBtn');
+            const emojiBtn = document.getElementById('emojiBtn');
+
+            // Sample chat messages
+            const sampleMessages = [
+                { name: 'Sarah', message: 'Congratulations to the beautiful couple! ❤️' },
+                { name: 'Ali', message: 'The decorations look amazing!' },
+                { name: 'Fatima', message: 'Best wishes from Dubai! 🎉' },
+                { name: 'Ahmed', message: 'May Allah bless your marriage 🙏' },
+                { name: 'Maria', message: 'The bride looks stunning! 🌟' },
+                { name: 'Bilal', message: 'Wishing you both eternal happiness 💕' },
+                { name: 'Sana', message: 'The music is beautiful! 🎵' },
+                { name: 'Omar', message: 'Congratulations from London! 🇬🇧' }
+            ];
+
+            // Simulated chat
+            function startSimulatedChat() {
+                // Add initial sample messages
+                sampleMessages.forEach((msg, index) => {
+                    setTimeout(() => {
+                        addChatMessage(msg.name, msg.message);
+                    }, index * 3000);
+                });
+
+                // Continue adding random messages
+                setInterval(() => {
+                    if (isLive && Math.random() > 0.7) {
+                        const randomName = ['Amina', 'Hassan', 'Zainab', 'Khalid', 'Layla', 'Yusuf'][Math.floor(Math.random() * 6)];
+                        const randomMessages = [
+                            'Beautiful ceremony!',
+                            'Congratulations! 🎊',
+                            'Wishing you all the best!',
+                            'The couple looks so happy! 😊',
+                            'Blessings from Canada! 🇨🇦',
+                            'Amazing live stream quality!',
+                            'May your love grow stronger every day! 💖'
+                        ];
+                        const randomMessage = randomMessages[Math.floor(Math.random() * randomMessages.length)];
+
+                        addChatMessage(randomName, randomMessage);
+                    }
+                }, 8000);
+            }
+
+            function addChatMessage(name, message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'chat-message';
+
+                const now = new Date();
+                const timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+
+                messageDiv.innerHTML = `
+                    <div class="message-content">
+                        <div style="flex: 1;">
+                            <div class="message-header">
+                                <span class="message-sender">${name}</span>
+                                <span class="message-time">${timeString}</span>
+                            </div>
+                            <p>${message}</p>
+                        </div>
+                    </div>
+                `;
+
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Send message functionality
+            if (sendChatBtn && chatInput) {
+                sendChatBtn.addEventListener('click', sendMessage);
+                chatInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+            }
+
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    addChatMessage('You', message);
+                    chatInput.value = '';
+
+                    // Simulate response after 2-5 seconds
+                    setTimeout(() => {
+                        if (Math.random() > 0.5) {
+                            const responses = [
+                                'Thank you for the kind words!',
+                                'That\'s so sweet!',
+                                'We appreciate your blessings!',
+                                'Thank you for joining us!'
+                            ];
+                            addChatMessage('Guest', responses[Math.floor(Math.random() * responses.length)]);
+                        }
+                    }, Math.random() * 3000 + 2000);
+                }
+            }
+
+            // Emoji button (simulated)
+            if (emojiBtn) {
+                emojiBtn.addEventListener('click', function () {
+                    const emojis = ['😊', '❤️', '🎉', '🙏', '🌟', '💕', '🎊', '🥳'];
+                    const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                    chatInput.value += randomEmoji + ' ';
+                    chatInput.focus();
+                });
+            }
+
+            // Set reminder functionality
+            const reminderButtons = document.querySelectorAll('.set-reminder');
+            reminderButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const event = this.dataset.event;
+                    const eventName = this.closest('.schedule-content').querySelector('h4').textContent;
+                    const eventTime = this.closest('.schedule-item').querySelector('.time-hours').textContent;
+                    const eventDate = this.closest('.schedule-item').querySelector('.time-date').textContent;
+
+                    if ('Notification' in window && Notification.permission === 'granted') {
+                        // Schedule notification
+                        const eventDateTime = new Date(`2026-11-${eventDate === 'Nov 14' ? '14' : '15'}T${eventTime}:00+05:00`);
+                        const timeUntilEvent = eventDateTime - new Date();
+
+                        if (timeUntilEvent > 0) {
+                            setTimeout(() => {
+                                new Notification('Aisha & Rohan Wedding Reminder', {
+                                    body: `${eventName} is starting now!`,
+                                    icon: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80'
+                                });
+                            }, timeUntilEvent);
+
+                            alert(`Reminder set for ${eventName} on ${eventDate} at ${eventTime}!`);
+                        }
+                    } else if ('Notification' in window && Notification.permission !== 'denied') {
+                        Notification.requestPermission().then(permission => {
+                            if (permission === 'granted') {
+                                alert(`Reminder set for ${eventName} on ${eventDate} at ${eventTime}!`);
+                            }
+                        });
+                    } else {
+                        alert(`Calendar reminder added for ${eventName} on ${eventDate} at ${eventTime}!`);
+                    }
+                });
+            });
+
+            // Watch replay functionality
+            const replayButtons = document.querySelectorAll('.watch-replay');
+            replayButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const event = this.dataset.event;
+                    alert(`In a real application, this would play the ${event} night recording.`);
+                });
+            });
+
+            // Timezone converter
+            const timezoneSelect = document.getElementById('timezoneSelect');
+            const convertedTime = document.getElementById('convertedTime');
+
+            if (timezoneSelect && convertedTime) {
+                timezoneSelect.addEventListener('change', function () {
+                    const timezone = this.value;
+                    let converted = '';
+
+                    switch (timezone) {
+                        case 'EST':
+                            converted = '8:00 AM, February 14';
+                            break;
+                        case 'PST':
+                            converted = '5:00 AM, February 14';
+                            break;
+                        case 'GMT':
+                            converted = '1:00 PM, February 14';
+                            break;
+                        case 'CET':
+                            converted = '2:00 PM, February 14';
+                            break;
+                        case 'GST':
+                            converted = '5:00 PM, February 14';
+                            break;
+                        case 'AEST':
+                            converted = '11:00 PM, February 14';
+                            break;
+                        case 'IST':
+                            converted = '6:30 PM, February 14';
+                            break;
+                        default:
+                            converted = '6:00 PM, February 14';
+                    }
+
+                    convertedTime.textContent = converted;
+                });
+            }
+
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function () {
+                    const item = this.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Share buttons functionality
+            const shareButtons = document.querySelectorAll('.share-btn');
+            shareButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const platform = this.classList[1];
+                    const url = window.location.href;
+                    const title = 'Aisha & Rohan Wedding Live Stream';
+                    const text = 'Join me in watching Aisha & Rohan\'s wedding live!';
+
+                    switch (platform) {
+                        case 'facebook':
+                            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                            break;
+                        case 'whatsapp':
+                            window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+                            break;
+                        case 'twitter':
+                            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                            break;
+                        case 'email':
+                            window.open(`mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(text + '\n\n' + url)}`, '_blank');
+                            break;
+                        case 'copy':
+                            navigator.clipboard.writeText(url).then(() => {
+                                alert('Live stream link copied to clipboard!');
+                            });
+                            break;
+                    }
+                });
+            });
+
+            // Audio toggle functionality
+            const commentaryToggle = document.getElementById('commentaryToggle');
+            const musicToggle = document.getElementById('musicToggle');
+
+            if (commentaryToggle) {
+                commentaryToggle.addEventListener('change', function () {
+                    alert(`Live commentary ${this.checked ? 'enabled' : 'disabled'}`);
+                });
+            }
+
+            if (musicToggle) {
+                musicToggle.addEventListener('change', function () {
+                    alert(`Background music ${this.checked ? 'enabled' : 'disabled'}`);
+                });
+            }
+
+            // Initialize
+            checkStreamStatus();
+            setInterval(checkStreamStatus, 30000); // Check every 30 seconds
+            setInterval(updateCountdown, 1000); // Update countdown every second
+
+            // Request notification permission
+            if ('Notification' in window && Notification.permission === 'default') {
+                setTimeout(() => {
+                    Notification.requestPermission();
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+
+</html>

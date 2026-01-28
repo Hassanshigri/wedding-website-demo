@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Aisha & Rohan's Wedding</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Aisha & Rohan</a>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="love-story.html"><i class="fas fa-heart"></i> Love Story</a></li>
+                <li><a href="mehndi.html"><i class="fas fa-paint-brush"></i> Mehndi</a></li>
+                <li><a href="barat.html"><i class="fas fa-gem"></i> Barat</a></li>
+                <li><a href="walima.html"><i class="fas fa-utensils"></i> Walima</a></li>
+                <li><a href="rsvp.html"><i class="fas fa-envelope"></i> RSVP</a></li>
+                <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="guestbook.html"><i class="fas fa-book"></i> Guestbook</a></li>
+                <li><a href="live.html"><i class="fas fa-video"></i> Live</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header"
+        style="background: linear-gradient(rgba(103, 58, 183, 0.8), rgba(103, 58, 183, 0.8)), 
+                url('https://images.unsplash.com/photo-1520854221256-17463ccb8b9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p>Capturing moments, creating memories</p>
+            <div class="gallery-stats">
+                <span><i class="fas fa-images"></i> 128 Photos</span>
+                <span><i class="fas fa-video"></i> 12 Videos</span>
+                <span><i class="fas fa-heart"></i> 256 Likes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <div class="controls-left">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Photos</button>
+                        <button class="filter-btn" data-filter="engagement">Engagement</button>
+                        <button class="filter-btn" data-filter="mehndi">Mehndi</button>
+                        <button class="filter-btn" data-filter="barat">Barat</button>
+                        <button class="filter-btn" data-filter="walima">Walima</button>
+                        <button class="filter-btn" data-filter="couple">Couple Photos</button>
+                    </div>
+                </div>
+                <div class="controls-right">
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                        <button class="view-btn" data-view="masonry"><i class="fas fa-th-large"></i></button>
+                    </div>
+                    <button class="upload-btn" id="uploadTrigger">
+                        <i class="fas fa-cloud-upload-alt"></i> Share Your Photos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-container" id="galleryContainer">
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Engagement Photos -->
+                    <div class="gallery-item engagement" data-category="engagement">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Engagement ceremony" data-index="1">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>The Proposal</h4>
+                                    <p>February 2023</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 42</span>
+                                        <span><i class="far fa-comment"></i> 12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item couple" data-category="couple">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Couple portrait" data-index="2">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>First Photo Shoot</h4>
+                                    <p>December 2023</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 56</span>
+                                        <span><i class="far fa-comment"></i> 18</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mehndi Photos -->
+                    <div class="gallery-item mehndi" data-category="mehndi">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Mehndi ceremony" data-index="3">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Henna Art</h4>
+                                    <p>Mehndi Night</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 38</span>
+                                        <span><i class="far fa-comment"></i> 9</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item mehndi" data-category="mehndi">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1581068577845-31c6b59ec1b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Mehndi dance" data-index="4">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Celebrations Begin</h4>
+                                    <p>Mehndi Night</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 45</span>
+                                        <span><i class="far fa-comment"></i> 14</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Barat Photos -->
+                    <div class="gallery-item barat" data-category="barat">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-1.2.1&auto=format&fit=crop&w-600&q=80"
+                                alt="Nikkah ceremony" data-index="5">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Nikkah Moment</h4>
+                                    <p>Barat Night</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 89</span>
+                                        <span><i class="far fa-comment"></i> 24</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item barat" data-category="barat">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1520854221256-17463ccb8b9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Baraat procession" data-index="6">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Baraat Arrival</h4>
+                                    <p>Barat Night</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 67</span>
+                                        <span><i class="far fa-comment"></i> 19</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Walima Photos -->
+                    <div class="gallery-item walima" data-category="walima">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Walima reception" data-index="7">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Grand Entrance</h4>
+                                    <p>Walima Night</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 72</span>
+                                        <span><i class="far fa-comment"></i> 22</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item walima" data-category="walima">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Cake cutting" data-index="8">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Cake Cutting Ceremony</h4>
+                                    <p>Walima Night</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 81</span>
+                                        <span><i class="far fa-comment"></i> 26</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More Couple Photos -->
+                    <div class="gallery-item couple" data-category="couple">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Romantic moment" data-index="9">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Golden Hour</h4>
+                                    <p>Pre-Wedding Shoot</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 94</span>
+                                        <span><i class="far fa-comment"></i> 31</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item couple" data-category="couple">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Candid moment" data-index="10">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Candid Smiles</h4>
+                                    <p>Pre-Wedding Shoot</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 76</span>
+                                        <span><i class="far fa-comment"></i> 21</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Family Photos -->
+                    <div class="gallery-item couple" data-category="couple">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1529254479751-fbacb4c7a587?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="With family" data-index="11">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Family Blessings</h4>
+                                    <p>Barat Night</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 52</span>
+                                        <span><i class="far fa-comment"></i> 16</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item walima" data-category="walima">
+                        <div class="gallery-item-inner">
+                            <img src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Group photo" data-index="12">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <h4>Friends & Family</h4>
+                                    <p>Walima Night</p>
+                                    <div class="photo-stats">
+                                        <span><i class="far fa-heart"></i> 63</span>
+                                        <span><i class="far fa-comment"></i> 18</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Gallery -->
+            <div class="video-section">
+                <h2 class="section-title">Wedding Videos</h2>
+                <p class="section-subtitle">Relive the special moments</p>
+
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Engagement Video">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-duration">2:45</div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Engagement Highlights</h4>
+                            <p>A beautiful compilation of our engagement ceremony</p>
+                            <div class="video-stats">
+                                <span><i class="far fa-eye"></i> 1.2K views</span>
+                                <span><i class="far fa-calendar"></i> Nov 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Mehndi Video">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-duration">4:32</div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Mehndi Night Celebrations</h4>
+                            <p>Traditional dances and henna ceremony</p>
+                            <div class="video-stats">
+                                <span><i class="far fa-eye"></i> 2.4K views</span>
+                                <span><i class="far fa-calendar"></i> Nov 13, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1520854221256-17463ccb8b9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                                alt="Barat Video">
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-duration">6:18</div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Nikkah Ceremony</h4>
+                            <p>The sacred moment of our union</p>
+                            <div class="video-stats">
+                                <span><i class="far fa-eye"></i> 3.1K views</span>
+                                <span><i class="far fa-calendar"></i> Nov 14, 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guest Photos Section -->
+            <div class="guest-photos-section">
+                <div class="section-header">
+                    <h2 class="section-title">Photos from Guests</h2>
+                    <p class="section-subtitle">Share your moments from our celebrations</p>
+                    <button class="upload-btn" id="uploadGuestPhotos">
+                        <i class="fas fa-camera"></i> Upload Your Photos
+                    </button>
+                </div>
+
+                <div class="guest-photos-grid">
+                    <div class="guest-photo">
+                        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                            alt="Guest photo 1">
+                        <div class="guest-info">
+                            <div class="guest-avatar">S</div>
+                            <div class="guest-details">
+                                <h5>Sarah Ahmed</h5>
+                                <p>Mehndi Night</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guest-photo">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                            alt="Guest photo 2">
+                        <div class="guest-info">
+                            <div class="guest-avatar">A</div>
+                            <div class="guest-details">
+                                <h5>Ali Khan</h5>
+                                <p>Walima Night</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guest-photo">
+                        <img src="https://images.unsplash.com/photo-1529254479751-fbacb4c7a587?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                            alt="Guest photo 3">
+                        <div class="guest-info">
+                            <div class="guest-avatar">M</div>
+                            <div class="guest-details">
+                                <h5>Maria Shah</h5>
+                                <p>Barat Night</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Upload Modal -->
+            <div class="modal" id="uploadModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3><i class="fas fa-cloud-upload-alt"></i> Share Your Photos</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="upload-instructions">
+                            <p><i class="fas fa-info-circle"></i> Upload photos from the wedding celebrations. Max file
+                                size: 5MB. Supported formats: JPG, PNG, GIF.</p>
+                        </div>
+
+                        <form id="photoUploadForm">
+                            <div class="form-group">
+                                <label for="uploaderName">Your Name *</label>
+                                <input type="text" id="uploaderName" placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="photoCategory">Photo Category *</label>
+                                <select id="photoCategory" required>
+                                    <option value="">Select category</option>
+                                    <option value="mehndi">Mehndi Night</option>
+                                    <option value="barat">Barat Night</option>
+                                    <option value="walima">Walima Night</option>
+                                    <option value="general">General Photos</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="photoCaption">Photo Caption</label>
+                                <textarea id="photoCaption" rows="3"
+                                    placeholder="Add a caption or description..."></textarea>
+                            </div>
+
+                            <div class="upload-area" id="uploadArea">
+                                <div class="upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <p>Drag & drop photos here or</p>
+                                <button type="button" class="btn-secondary" id="browseFiles">
+                                    <i class="fas fa-folder-open"></i> Browse Files
+                                </button>
+                                <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+                                <p class="upload-note">Maximum 5 photos at a time</p>
+                            </div>
+
+                            <div class="upload-preview" id="uploadPreview">
+                                <!-- Preview will be added here -->
+                            </div>
+
+                            <div class="form-submission">
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-upload"></i> Upload Photos
+                                </button>
+                                <button type="button" class="btn-secondary modal-close">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lightbox Modal -->
+            <div class="lightbox" id="lightbox">
+                <button class="lightbox-close">&times;</button>
+                <button class="lightbox-nav prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="lightbox-nav next"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="lightbox-content">
+                    <div class="lightbox-image-container">
+                        <img id="lightboxImage" src="" alt="">
+                    </div>
+                    <div class="lightbox-info">
+                        <div class="lightbox-header">
+                            <h3 id="lightboxTitle">Photo Title</h3>
+                            <p id="lightboxDate">Date</p>
+                        </div>
+                        <div class="lightbox-stats">
+                            <button class="like-btn" id="lightboxLike">
+                                <i class="far fa-heart"></i> <span id="likeCount">0</span>
+                            </button>
+                            <button class="share-btn" id="lightboxShare">
+                                <i class="fas fa-share-alt"></i> Share
+                            </button>
+                            <button class="download-btn" id="lightboxDownload">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                        <div class="lightbox-comments">
+                            <h4>Comments</h4>
+                            <div class="comments-list" id="commentsList">
+                                <!-- Comments will be added here -->
+                            </div>
+                            <div class="comment-form">
+                                <input type="text" id="commentInput" placeholder="Add a comment...">
+                                <button id="submitComment"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Aisha & Rohan</h3>
+                    <p>Thank you for capturing these beautiful moments with us. Your photos make our memories even more
+                        special.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Gallery Info</h3>
+                    <p><i class="fas fa-camera"></i> Official Photographer: Studio X</p>
+                    <p><i class="fas fa-video"></i> Videographer: Motion Films</p>
+                    <p><i class="fas fa-hashtag"></i> Hashtag: #AishaRohanWedding</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Share Your Photos</h3>
+                    <p>Tag us on social media or upload directly to our gallery.</p>
+                    <div class="social-share">
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <button id="footerUploadBtn" class="social-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aisha & Rohan's Wedding. All rights reserved.</p>
+                <p>All photos are copyright protected. Please credit photographers when sharing.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+
+    <!-- Gallery Specific CSS -->
+    <style>
+        .active {
+            color: var(--primary-color) !important;
+            font-weight: 600 !important;
+        }
+
+        .gallery-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gallery-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .gallery-stats i {
+            color: #FFD700;
+        }
+
+        /* Gallery Controls */
+        .gallery-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: var(--light-bg);
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            color: var(--text-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .controls-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--light-bg);
+            padding: 0.5rem;
+            border-radius: 10px;
+        }
+
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .view-btn.active {
+            background: var(--white);
+            color: var(--primary-color);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .upload-btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
+        }
+
+        /* Gallery Grid */
+        .gallery-container {
+            margin-bottom: 4rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-grid.masonry-view {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-auto-rows: masonry;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item-inner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .overlay-content {
+            color: white;
+        }
+
+        .overlay-content h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .photo-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .photo-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin: 4rem 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .play-button:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .video-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Guest Photos Section */
+        .guest-photos-section {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: var(--light-bg);
+            border-radius: 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .guest-photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .guest-photo {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .guest-photo:hover {
+            transform: translateY(-5px);
+        }
+
+        .guest-photo img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .guest-info {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .guest-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .guest-details h5 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .guest-details p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #666;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--primary-color);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .upload-instructions {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .upload-instructions i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        .upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            transition: var(--transition);
+        }
+
+        .upload-area.drag-over {
+            border-color: var(--primary-color);
+            background: rgba(233, 30, 99, 0.05);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .upload-note {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .upload-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .preview-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .preview-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .remove-preview {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            z-index: 3001;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-nav.prev {
+            left: 20px;
+        }
+
+        .lightbox-nav.next {
+            right: 20px;
+        }
+
+        .lightbox-content {
+            display: flex;
+            max-width: 1200px;
+            width: 90%;
+            max-height: 90vh;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .lightbox-image-container {
+            flex: 2;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #lightboxImage {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-info {
+            flex: 1;
+            padding: 2rem;
+            background: var(--white);
+            overflow-y: auto;
+        }
+
+        .lightbox-header {
+            margin-bottom: 2rem;
+        }
+
+        .lightbox-header h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .lightbox-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .lightbox-stats button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--light-bg);
+            border: none;
+            border-radius: 50px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-stats button:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .lightbox-stats button.liked i {
+            color: var(--primary-color);
+        }
+
+        .lightbox-comments {
+            margin-top: 2rem;
+        }
+
+        .comments-list {
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 1rem 0;
+        }
+
+        .comment-item {
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .comment-text {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-time {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .comment-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        #commentInput {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-family: inherit;
+        }
+
+        #commentInput:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        #submitComment {
+            width: 50px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        #submitComment:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Social Share */
+        .social-share {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-bg);
+            border-radius: 50%;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .lightbox-content {
+                flex-direction: column;
+                width: 95%;
+            }
+
+            .lightbox-image-container {
+                min-height: 60vh;
+            }
+
+            .lightbox-info {
+                max-height: 40vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-controls {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: stretch;
+            }
+
+            .controls-right {
+                justify-content: space-between;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .gallery-stats {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guest-photos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filter-buttons {
+                justify-content: center;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                padding: 0;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .upload-area {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+
+    <!-- Gallery Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Gallery State
+            let currentFilter = 'all';
+            let currentView = 'grid';
+            let currentPhotoIndex = 0;
+            let photos = [];
+
+            // Initialize photos array from gallery items
+            function initializePhotos() {
+                const items = document.querySelectorAll('.gallery-item');
+                photos = Array.from(items).map(item => ({
+                    src: item.querySelector('img').src,
+                    alt: item.querySelector('img').alt,
+                    category: item.dataset.category,
+                    title: item.querySelector('h4')?.textContent || '',
+                    date: item.querySelector('p')?.textContent || '',
+                    likes: parseInt(item.querySelector('.photo-stats span:first-child')?.textContent.match(/\d+/)?.[0] || '0'),
+                    comments: parseInt(item.querySelector('.photo-stats span:last-child')?.textContent.match(/\d+/)?.[0] || '0')
+                }));
+            }
+
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Update active filter button
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Get filter category
+                    currentFilter = this.dataset.filter;
+
+                    // Filter gallery items
+                    filterGallery();
+                });
+            });
+
+            function filterGallery() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+
+                galleryItems.forEach(item => {
+                    if (currentFilter === 'all' || item.dataset.category === currentFilter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            }
+
+            // View toggle functionality
+            const viewButtons = document.querySelectorAll('.view-btn');
+            const galleryGrid = document.getElementById('galleryGrid');
+
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Update active view button
+                    viewButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Update view mode
+                    currentView = this.dataset.view;
+                    galleryGrid.classList.toggle('masonry-view', currentView === 'masonry');
+                });
+            });
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDate = document.getElementById('lightboxDate');
+            const likeCount = document.getElementById('likeCount');
+            const lightboxLike = document.getElementById('lightboxLike');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const prevBtn = document.querySelector('.lightbox-nav.prev');
+            const nextBtn = document.querySelector('.lightbox-nav.next');
+
+            // Open lightbox when gallery item is clicked
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', function (e) {
+                    if (!e.target.closest('.gallery-overlay')) {
+                        currentPhotoIndex = index;
+                        openLightbox();
+                    }
+                });
+            });
+
+            function openLightbox() {
+                const photo = photos[currentPhotoIndex];
+
+                // Update lightbox content
+                lightboxImage.src = photo.src;
+                lightboxImage.alt = photo.alt;
+                lightboxTitle.textContent = photo.title;
+                lightboxDate.textContent = photo.date;
+                likeCount.textContent = photo.likes;
+
+                // Update comments (mock data for demo)
+                updateComments();
+
+                // Show lightbox
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+
+            function navigateLightbox(direction) {
+                if (direction === 'prev') {
+                    currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+                } else {
+                    currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+                }
+
+                const photo = photos[currentPhotoIndex];
+                lightboxImage.src = photo.src;
+                lightboxImage.alt = photo.alt;
+                lightboxTitle.textContent = photo.title;
+                lightboxDate.textContent = photo.date;
+                likeCount.textContent = photo.likes;
+
+                // Update comments for new photo
+                updateComments();
+            }
+
+            // Lightbox event listeners
+            lightboxClose.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', () => navigateLightbox('prev'));
+            nextBtn.addEventListener('click', () => navigateLightbox('next'));
+
+            // Close lightbox on ESC key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+                if (e.key === 'ArrowLeft' && lightbox.classList.contains('active')) {
+                    navigateLightbox('prev');
+                }
+                if (e.key === 'ArrowRight' && lightbox.classList.contains('active')) {
+                    navigateLightbox('next');
+                }
+            });
+
+            // Close lightbox when clicking on background
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Like functionality
+            lightboxLike.addEventListener('click', function () {
+                const likeIcon = this.querySelector('i');
+                const currentLikes = parseInt(likeCount.textContent);
+
+                if (this.classList.contains('liked')) {
+                    // Unlike
+                    this.classList.remove('liked');
+                    likeIcon.classList.remove('fas');
+                    likeIcon.classList.add('far');
+                    likeCount.textContent = currentLikes - 1;
+
+                    // Update in photos array
+                    photos[currentPhotoIndex].likes = currentLikes - 1;
+                } else {
+                    // Like
+                    this.classList.add('liked');
+                    likeIcon.classList.remove('far');
+                    likeIcon.classList.add('fas');
+                    likeCount.textContent = currentLikes + 1;
+
+                    // Update in photos array
+                    photos[currentPhotoIndex].likes = currentLikes + 1;
+                }
+            });
+
+            // Share functionality
+            const lightboxShare = document.getElementById('lightboxShare');
+            lightboxShare.addEventListener('click', function () {
+                const photoUrl = photos[currentPhotoIndex].src;
+                const photoTitle = photos[currentPhotoIndex].title;
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: photoTitle,
+                        text: 'Check out this photo from Aisha & Rohan\'s wedding!',
+                        url: photoUrl
+                    });
+                } else {
+                    // Fallback: Copy to clipboard
+                    navigator.clipboard.writeText(photoUrl).then(() => {
+                        alert('Photo link copied to clipboard!');
+                    });
+                }
+            });
+
+            // Download functionality
+            const lightboxDownload = document.getElementById('lightboxDownload');
+            lightboxDownload.addEventListener('click', function () {
+                const photoUrl = photos[currentPhotoIndex].src;
+                const photoTitle = photos[currentPhotoIndex].title;
+
+                // Create temporary link for download
+                const link = document.createElement('a');
+                link.href = photoUrl;
+                link.download = `aisha-rohan-${photoTitle.toLowerCase().replace(/\s+/g, '-')}.jpg`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            // Comments functionality
+            const commentInput = document.getElementById('commentInput');
+            const submitComment = document.getElementById('submitComment');
+            const commentsList = document.getElementById('commentsList');
+
+            function updateComments() {
+                // Mock comments for demo
+                const mockComments = [
+                    { author: 'Sarah Ahmed', text: 'Such a beautiful moment! 💖', time: '2 hours ago' },
+                    { author: 'Ali Khan', text: 'Congratulations! You both look amazing!', time: '5 hours ago' },
+                    { author: 'Maria Shah', text: 'This photo captures the happiness perfectly!', time: '1 day ago' }
+                ];
+
+                commentsList.innerHTML = '';
+                mockComments.forEach(comment => {
+                    const commentItem = document.createElement('div');
+                    commentItem.className = 'comment-item';
+                    commentItem.innerHTML = `
+                        <div class="comment-author">${comment.author}</div>
+                        <div class="comment-text">${comment.text}</div>
+                        <div class="comment-time">${comment.time}</div>
+                    `;
+                    commentsList.appendChild(commentItem);
+                });
+            }
+
+            submitComment.addEventListener('click', function () {
+                const commentText = commentInput.value.trim();
+                if (commentText) {
+                    const commentItem = document.createElement('div');
+                    commentItem.className = 'comment-item';
+                    commentItem.innerHTML = `
+                        <div class="comment-author">You</div>
+                        <div class="comment-text">${commentText}</div>
+                        <div class="comment-time">Just now</div>
+                    `;
+                    commentsList.prepend(commentItem);
+                    commentInput.value = '';
+
+                    // Update comment count
+                    photos[currentPhotoIndex].comments += 1;
+                }
+            });
+
+            commentInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    submitComment.click();
+                }
+            });
+
+            // Upload modal functionality
+            const uploadModal = document.getElementById('uploadModal');
+            const uploadTrigger = document.getElementById('uploadTrigger');
+            const uploadGuestPhotos = document.getElementById('uploadGuestPhotos');
+            const footerUploadBtn = document.getElementById('footerUploadBtn');
+            const modalCloseBtns = document.querySelectorAll('.modal-close');
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            const browseFiles = document.getElementById('browseFiles');
+            const uploadPreview = document.getElementById('uploadPreview');
+            const photoUploadForm = document.getElementById('photoUploadForm');
+
+            // Open modal
+            function openUploadModal() {
+                uploadModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close modal
+            function closeUploadModal() {
+                uploadModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                // Reset form
+                photoUploadForm.reset();
+                uploadPreview.innerHTML = '';
+            }
+
+            // Event listeners for opening modal
+            [uploadTrigger, uploadGuestPhotos, footerUploadBtn].forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', openUploadModal);
+                }
+            });
+
+            // Event listeners for closing modal
+            modalCloseBtns.forEach(btn => {
+                btn.addEventListener('click', closeUploadModal);
+            });
+
+            // Close modal on background click
+            uploadModal.addEventListener('click', function (e) {
+                if (e.target === uploadModal) {
+                    closeUploadModal();
+                }
+            });
+
+            // Close modal on ESC key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && uploadModal.classList.contains('active')) {
+                    closeUploadModal();
+                }
+            });
+
+            // Drag and drop functionality
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                uploadArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            function highlight() {
+                uploadArea.classList.add('drag-over');
+            }
+
+            function unhighlight() {
+                uploadArea.classList.remove('drag-over');
+            }
+
+            // Handle dropped files
+            uploadArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleFiles(files);
+            }
+
+            // Browse files button
+            browseFiles.addEventListener('click', function () {
+                fileInput.click();
+            });
+
+            fileInput.addEventListener('change', function () {
+                handleFiles(this.files);
+            });
+
+            // Handle selected files
+            function handleFiles(files) {
+                [...files].forEach(file => {
+                    if (file.type.startsWith('image/') && file.size <= 5 * 1024 * 1024) {
+                        previewFile(file);
+                    } else {
+                        alert('Please select image files under 5MB.');
+                    }
+                });
+            }
+
+            // Preview uploaded files
+            function previewFile(file) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = function () {
+                    const previewItem = document.createElement('div');
+                    previewItem.className = 'preview-item';
+                    previewItem.innerHTML = `
+                        <img src="${reader.result}" alt="Preview">
+                        <button class="remove-preview" type="button">&times;</button>
+                    `;
+
+                    // Add remove functionality
+                    previewItem.querySelector('.remove-preview').addEventListener('click', function () {
+                        previewItem.remove();
+                    });
+
+                    uploadPreview.appendChild(previewItem);
+                };
+            }
+
+            // Form submission
+            photoUploadForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const uploaderName = document.getElementById('uploaderName').value.trim();
+                const photoCategory = document.getElementById('photoCategory').value;
+
+                if (!uploaderName || !photoCategory) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+
+                if (uploadPreview.children.length === 0) {
+                    alert('Please select at least one photo to upload.');
+                    return;
+                }
+
+                // In a real application, you would upload files to a server
+                // For demo, we'll just show a success message
+                alert('Photos uploaded successfully! Thank you for sharing.');
+                closeUploadModal();
+            });
+
+            // Video play functionality
+            document.querySelectorAll('.play-button').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const videoTitle = this.closest('.video-item').querySelector('h4').textContent;
+                    alert(`In a real application, this would play the video: "${videoTitle}"`);
+                });
+            });
+
+            // Initialize gallery
+            initializePhotos();
+            filterGallery();
+
+            // Add some interactivity to gallery items
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                // Like functionality on gallery items
+                const likeIcon = item.querySelector('.fa-heart');
+                const likeCount = item.querySelector('.photo-stats span:first-child');
+
+                if (likeIcon && likeCount) {
+                    item.addEventListener('mouseenter', function () {
+                        likeIcon.addEventListener('click', function (e) {
+                            e.stopPropagation();
+
+                            if (this.classList.contains('far')) {
+                                // Like
+                                this.classList.remove('far');
+                                this.classList.add('fas');
+                                const current = parseInt(likeCount.textContent);
+                                likeCount.textContent = current + 1;
+
+                                // Update in photos array
+                                const index = Array.from(document.querySelectorAll('.gallery-item')).indexOf(item);
+                                if (index !== -1) {
+                                    photos[index].likes += 1;
+                                }
+                            } else {
+                                // Unlike
+                                this.classList.remove('fas');
+                                this.classList.add('far');
+                                const current = parseInt(likeCount.textContent);
+                                likeCount.textContent = Math.max(0, current - 1);
+
+                                // Update in photos array
+                                const index = Array.from(document.querySelectorAll('.gallery-item')).indexOf(item);
+                                if (index !== -1) {
+                                    photos[index].likes = Math.max(0, photos[index].likes - 1);
+                                }
+                            }
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

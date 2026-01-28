@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP - Aisha & Rohan's Wedding</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Aisha & Rohan</a>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="love-story.html"><i class="fas fa-heart"></i> Love Story</a></li>
+                <li><a href="mehndi.html"><i class="fas fa-paint-brush"></i> Mehndi</a></li>
+                <li><a href="barat.html"><i class="fas fa-gem"></i> Barat</a></li>
+                <li><a href="walima.html"><i class="fas fa-utensils"></i> Walima</a></li>
+                <li><a href="rsvp.html" class="active"><i class="fas fa-envelope"></i> RSVP</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="guestbook.html"><i class="fas fa-book"></i> Guestbook</a></li>
+                <li><a href="live.html"><i class="fas fa-video"></i> Live</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header"
+        style="background: linear-gradient(rgba(76, 175, 80, 0.8), rgba(76, 175, 80, 0.8)), 
+                url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="container">
+            <h1>RSVP</h1>
+            <p>Kindly respond by February 1, 2026</p>
+            <div class="deadline-banner">
+                <p><i class="far fa-clock"></i> Response Deadline: February 1, 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="rsvp-container">
+                <!-- Introduction -->
+                <div class="rsvp-intro">
+                    <h2 class="text-center">We Can't Wait to Celebrate With You!</h2>
+                    <p class="text-center section-subtitle">Please let us know if you'll be joining us for our wedding
+                        celebrations</p>
+
+                    <div class="important-notes">
+                        <div class="note-card">
+                            <i class="fas fa-key"></i>
+                            <h4>Invitation Code Required</h4>
+                            <p>Please enter the unique code from your invitation card to access the RSVP form.</p>
+                        </div>
+                        <div class="note-card">
+                            <i class="fas fa-calendar-check"></i>
+                            <h4>Deadline: Nov 1, 2026</h4>
+                            <p>Kindly RSVP by this date to help us with planning and seating arrangements.</p>
+                        </div>
+                        <div class="note-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Group RSVPs Welcome</h4>
+                            <p>You can RSVP for your entire family or group using one invitation code.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password Protection Section -->
+                <div class="password-section" id="passwordSection">
+                    <div class="password-container">
+                        <div class="password-header">
+                            <i class="fas fa-lock" style="font-size: 3rem; color: #4CAF50; margin-bottom: 1rem;"></i>
+                            <h2>Invitation Verification</h2>
+                            <p>Please enter your unique invitation code to proceed</p>
+                        </div>
+
+                        <div class="password-form">
+                            <div class="form-group">
+                                <label for="invitationCode"><i class="fas fa-ticket-alt"></i> Invitation Code *</label>
+                                <input type="password" id="invitationCode" placeholder="Enter code from your invitation"
+                                    required>
+                                <div class="input-hint">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>This code is case-sensitive and was provided on your invitation card</span>
+                                </div>
+                            </div>
+
+                            <button id="verifyCode" class="btn-primary verify-btn">
+                                <i class="fas fa-unlock"></i> Verify & Continue
+                            </button>
+
+                            <div class="code-help">
+                                <p><i class="fas fa-question-circle"></i> Can't find your code? <a href="#"
+                                        id="helpLink">Click here for help</a></p>
+                            </div>
+                        </div>
+
+                        <div class="demo-codes" style="display: none;">
+                            <h4><i class="fas fa-lightbulb"></i> Demo Codes (For Testing)</h4>
+                            <p>Try these codes to test the RSVP form:</p>
+                            <div class="demo-code-list">
+                                <code>WED2026</code>
+                                <code>AISHA123</code>
+                                <code>ROHAN456</code>
+                                <code>LOVE789</code>
+                                <code>FAMILY2026</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RSVP Form (Initially Hidden) -->
+                <div class="rsvp-form-section" id="rsvpFormSection" style="display: none;">
+                    <div class="rsvp-form-container">
+                        <div class="form-header">
+                            <h2><i class="fas fa-edit"></i> Wedding RSVP Form</h2>
+                            <p>Please fill in your details below</p>
+                        </div>
+
+                        <form id="rsvpForm">
+                            <!-- Primary Guest Information -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-user"></i> Primary Guest Information</h3>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name *</label>
+                                        <input type="text" id="firstName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name *</label>
+                                        <input type="text" id="lastName" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email Address *</label>
+                                        <input type="email" id="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number *</label>
+                                        <input type="tel" id="phone" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Mailing Address</label>
+                                    <textarea id="address" rows="2"
+                                        placeholder="Street address, City, Postal Code"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Attendance Status -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-calendar-check"></i> Attendance</h3>
+
+                                <div class="attendance-options">
+                                    <div class="attendance-option">
+                                        <input type="radio" id="attendingYes" name="attendance" value="yes" checked>
+                                        <label for="attendingYes">
+                                            <div class="option-content">
+                                                <i class="fas fa-check-circle"></i>
+                                                <div>
+                                                    <h4>Joyfully Accept</h4>
+                                                    <p>We will be attending the wedding celebrations</p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="attendance-option">
+                                        <input type="radio" id="attendingNo" name="attendance" value="no">
+                                        <label for="attendingNo">
+                                            <div class="option-content">
+                                                <i class="fas fa-times-circle"></i>
+                                                <div>
+                                                    <h4>Regretfully Decline</h4>
+                                                    <p>We will not be able to attend</p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="decline-reason" id="declineReason" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="reason">If declining, please let us know why:</label>
+                                        <select id="reason">
+                                            <option value="">Select a reason</option>
+                                            <option value="prior_commitment">Prior commitment</option>
+                                            <option value="travel_constraints">Travel constraints</option>
+                                            <option value="health_reasons">Health reasons</option>
+                                            <option value="work_commitments">Work commitments</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="otherReason" style="display: none;">
+                                        <label for="otherReasonText">Please specify:</label>
+                                        <input type="text" id="otherReasonText">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Events Selection -->
+                            <div class="form-section" id="eventsSection">
+                                <h3><i class="fas fa-calendar-star"></i> Events You'll Attend</h3>
+                                <p class="section-subtitle">Please select which events you'll be joining us for:</p>
+
+                                <div class="events-grid">
+                                    <div class="event-checkbox">
+                                        <input type="checkbox" id="eventMehndi" name="events" value="mehndi" checked>
+                                        <label for="eventMehndi">
+                                            <div class="event-info">
+                                                <h4>Mehndi Night</h4>
+                                                <p class="event-date">Nov 13, 2026 | 7:00 PM</p>
+                                                <p class="event-location">The Grand Mehndi Garden</p>
+                                            </div>
+                                            <div class="checkbox-indicator"></div>
+                                        </label>
+                                    </div>
+
+                                    <div class="event-checkbox">
+                                        <input type="checkbox" id="eventBarat" name="events" value="barat" checked>
+                                        <label for="eventBarat">
+                                            <div class="event-info">
+                                                <h4>Barat Night</h4>
+                                                <p class="event-date">Nov 14, 2026 | 6:00 PM</p>
+                                                <p class="event-location">Royal Convention Center</p>
+                                            </div>
+                                            <div class="checkbox-indicator"></div>
+                                        </label>
+                                    </div>
+
+                                    <div class="event-checkbox">
+                                        <input type="checkbox" id="eventWalima" name="events" value="walima" checked>
+                                        <label for="eventWalima">
+                                            <div class="event-info">
+                                                <h4>Walima Night</h4>
+                                                <p class="event-date">Nov 15, 2026 | 8:00 PM</p>
+                                                <p class="event-location">Pearl Continental Hotel</p>
+                                            </div>
+                                            <div class="checkbox-indicator"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Guest Count -->
+                            <div class="form-section" id="guestCountSection">
+                                <h3><i class="fas fa-users"></i> Number of Guests</h3>
+
+                                <div class="guest-counter">
+                                    <div class="counter-controls">
+                                        <button type="button" class="counter-btn" id="decreaseGuests">-</button>
+                                        <input type="number" id="guestCount" name="guestCount" value="1" min="1"
+                                            max="10" readonly>
+                                        <button type="button" class="counter-btn" id="increaseGuests">+</button>
+                                    </div>
+                                    <div class="counter-label">
+                                        <span id="guestLabel">1 Guest</span>
+                                        <small>Maximum 10 guests per invitation</small>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Guests -->
+                                <div class="additional-guests" id="additionalGuests">
+                                    <h4>Additional Guest Information</h4>
+                                    <div id="guestForms">
+                                        <!-- Dynamic guest forms will be added here -->
+                                    </div>
+                                    <button type="button" id="addGuestBtn" class="btn-secondary">
+                                        <i class="fas fa-user-plus"></i> Add Another Guest
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Dietary Preferences -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-utensils"></i> Dietary Preferences</h3>
+
+                                <div class="dietary-options">
+                                    <div class="dietary-option">
+                                        <input type="checkbox" id="dietVegetarian" name="dietary" value="vegetarian">
+                                        <label for="dietVegetarian">Vegetarian</label>
+                                    </div>
+                                    <div class="dietary-option">
+                                        <input type="checkbox" id="dietVegan" name="dietary" value="vegan">
+                                        <label for="dietVegan">Vegan</label>
+                                    </div>
+                                    <div class="dietary-option">
+                                        <input type="checkbox" id="dietGlutenFree" name="dietary" value="gluten_free">
+                                        <label for="dietGlutenFree">Gluten-Free</label>
+                                    </div>
+                                    <div class="dietary-option">
+                                        <input type="checkbox" id="dietHalal" name="dietary" value="halal" checked>
+                                        <label for="dietHalal">Halal Only</label>
+                                    </div>
+                                    <div class="dietary-option">
+                                        <input type="checkbox" id="dietNoRestrictions" name="dietary" value="none"
+                                            checked>
+                                        <label for="dietNoRestrictions">No Restrictions</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="dietaryNotes">Additional Dietary Notes</label>
+                                    <textarea id="dietaryNotes" rows="3"
+                                        placeholder="Please specify any allergies or special dietary requirements..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Song Requests -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-music"></i> Song Requests</h3>
+                                <div class="form-group">
+                                    <label for="songRequest">Help us create the perfect playlist! Any song
+                                        suggestions?</label>
+                                    <input type="text" id="songRequest" placeholder="Enter song title and artist">
+                                </div>
+                            </div>
+
+                            <!-- Message to Couple -->
+                            <div class="form-section">
+                                <h3><i class="fas fa-heart"></i> Message to the Couple</h3>
+                                <div class="form-group">
+                                    <label for="message">Share a special message or memory (optional)</label>
+                                    <textarea id="message" rows="4"
+                                        placeholder="We'd love to hear from you..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Submission -->
+                            <div class="form-section">
+                                <div class="terms-agreement">
+                                    <input type="checkbox" id="termsAgree" required>
+                                    <label for="termsAgree">
+                                        I confirm that the information provided is accurate and I understand that
+                                        changes may not be possible after submission.
+                                    </label>
+                                </div>
+
+                                <div class="form-submission">
+                                    <button type="submit" class="btn-primary submit-btn">
+                                        <i class="fas fa-paper-plane"></i> Submit RSVP
+                                    </button>
+                                    <button type="button" id="resetForm" class="btn-secondary">
+                                        <i class="fas fa-redo"></i> Reset Form
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Success Message (Initially Hidden) -->
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <div class="success-content">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>Thank You for Your Response!</h2>
+                        <p>Your RSVP has been successfully submitted. We're excited to celebrate with you!</p>
+
+                        <div class="success-details">
+                            <h4>Your RSVP Details:</h4>
+                            <div class="details-grid" id="rsvpDetails">
+                                <!-- Details will be populated here -->
+                            </div>
+                        </div>
+
+                        <div class="success-actions">
+                            <a href="../index.html" class="btn-primary">
+                                <i class="fas fa-home"></i> Back to Home
+                            </a>
+                            <a href="gallery.html" class="btn-secondary">
+                                <i class="fas fa-images"></i> View Gallery
+                            </a>
+                        </div>
+
+                        <div class="contact-reminder">
+                            <p><i class="fas fa-info-circle"></i> Need to make changes? Contact us at
+                                <strong>rsvp@aishaandrohan.com</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2 class="text-center">Frequently Asked Questions</h2>
+
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>What if I can't find my invitation code?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Your invitation code is printed on your physical invitation card. If you can't find
+                                    it, please contact our wedding coordinator at <strong>+92 300 123 4567</strong> or
+                                    email <strong>help@aishaandrohan.com</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Can I RSVP for my entire family?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! One invitation code can be used to RSVP for your entire family or group. Simply
+                                    enter the number of guests when filling out the form.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>What's the RSVP deadline?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Please RSVP by <strong>February 1, 2026</strong>. This helps us with final
+                                    arrangements for seating, catering, and planning.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>Can I change my RSVP after submitting?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Please contact us at <strong>rsvp@aishaandrohan.com</strong> if you need to make
+                                    changes to your RSVP. We'll do our best to accommodate changes based on
+                                    availability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Aisha & Rohan</h3>
+                    <p>Thank you for helping us plan our special day. Your response means the world to us.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>RSVP Assistance</h3>
+                    <p><i class="fas fa-phone"></i> RSVP Helpline: +92 300 123 4567</p>
+                    <p><i class="fas fa-envelope"></i> Email: rsvp@aishaandrohan.com</p>
+                    <p><i class="fas fa-clock"></i> Available: 10AM - 6PM, Daily</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="mehndi.html">Event Details</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="live.html">Live Stream</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aisha & Rohan's Wedding. All rights reserved.</p>
+                <p>Please RSVP by February 1, 2026 to ensure proper arrangements</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+
+    <!-- RSVP Specific CSS -->
+    <style>
+        .active {
+            color: var(--primary-color) !important;
+            font-weight: 600 !important;
+        }
+
+        .deadline-banner {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .deadline-banner p {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .deadline-banner i {
+            margin-right: 8px;
+            color: #FFD700;
+        }
+
+        /* RSVP Container */
+        .rsvp-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Introduction */
+        .rsvp-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .important-notes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .note-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .note-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .note-card i {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        /* Password Section */
+        .password-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .password-container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .password-header h2 {
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+        }
+
+        .password-form {
+            margin-top: 2rem;
+        }
+
+        .input-hint {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .input-hint i {
+            color: #4CAF50;
+        }
+
+        .verify-btn {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            background: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .verify-btn:hover {
+            background: #388E3C;
+            border-color: #388E3C;
+        }
+
+        .code-help {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .code-help a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .code-help a:hover {
+            text-decoration: underline;
+        }
+
+        .demo-codes {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .demo-code-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .demo-code-list code {
+            background: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-family: monospace;
+            border: 1px solid #ddd;
+        }
+
+        /* RSVP Form */
+        .rsvp-form-section {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .rsvp-form-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-header h2 {
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-section {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .form-section h3 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-section h3 i {
+            color: #4CAF50;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Attendance Options */
+        .attendance-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .attendance-option {
+            position: relative;
+        }
+
+        .attendance-option input[type="radio"] {
+            display: none;
+        }
+
+        .attendance-option label {
+            display: block;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .attendance-option input[type="radio"]:checked+label {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .option-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .option-content i {
+            font-size: 2rem;
+        }
+
+        .option-content i.fa-check-circle {
+            color: #4CAF50;
+        }
+
+        .option-content i.fa-times-circle {
+            color: #f44336;
+        }
+
+        .decline-reason {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        /* Events Grid */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .event-checkbox {
+            position: relative;
+        }
+
+        .event-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .event-checkbox label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .event-checkbox input[type="checkbox"]:checked+label {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .event-info h4 {
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .event-date,
+        .event-location {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0.2rem 0;
+        }
+
+        .checkbox-indicator {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .event-checkbox input[type="checkbox"]:checked+label .checkbox-indicator {
+            background: #4CAF50;
+            border-color: #4CAF50;
+            position: relative;
+        }
+
+        .event-checkbox input[type="checkbox"]:checked+label .checkbox-indicator::after {
+            content: '✓';
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8rem;
+        }
+
+        /* Guest Counter */
+        .guest-counter {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .counter-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .counter-btn {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .counter-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        #guestCount {
+            width: 60px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 0.5rem;
+        }
+
+        .counter-label {
+            flex: 1;
+        }
+
+        #guestLabel {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .counter-label small {
+            display: block;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        /* Additional Guests */
+        .additional-guests {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .guest-form {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .guest-form h5 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .remove-guest {
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        /* Dietary Options */
+        .dietary-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .dietary-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dietary-option input[type="checkbox"] {
+            margin: 0;
+        }
+
+        /* Terms Agreement */
+        .terms-agreement {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .terms-agreement input[type="checkbox"] {
+            margin-top: 0.3rem;
+        }
+
+        .form-submission {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .submit-btn {
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            background: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .submit-btn:hover {
+            background: #388E3C;
+            border-color: #388E3C;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 4rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .success-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #4CAF50;
+            margin-bottom: 2rem;
+        }
+
+        .success-details {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .detail-item {
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-item h5 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .contact-reminder {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: var(--white);
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--light-bg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            .rsvp-form-container,
+            .password-section,
+            .success-message {
+                padding: 2rem;
+            }
+
+            .form-section {
+                padding-bottom: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .attendance-options,
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guest-counter {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .counter-controls {
+                justify-content: center;
+            }
+
+            .form-submission,
+            .success-actions {
+                flex-direction: column;
+            }
+
+            .dietary-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .important-notes {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .rsvp-form-container,
+            .password-section,
+            .success-message {
+                padding: 1.5rem;
+            }
+
+            .dietary-options {
+                grid-template-columns: 1fr;
+            }
+
+            .deadline-banner {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .deadline-banner p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+    <!-- RSVP Specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Demo codes toggle
+            const helpLink = document.getElementById('helpLink');
+            const demoCodes = document.querySelector('.demo-codes');
+
+            if (helpLink) {
+                helpLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    demoCodes.style.display = demoCodes.style.display === 'none' ? 'block' : 'none';
+                });
+            }
+
+            // Password verification
+            const verifyCodeBtn = document.getElementById('verifyCode');
+            const passwordSection = document.getElementById('passwordSection');
+            const rsvpFormSection = document.getElementById('rsvpFormSection');
+            const invitationCodeInput = document.getElementById('invitationCode');
+
+            // Valid invitation codes
+            const validCodes = [
+                'WED2026',
+                'AISHA123',
+                'ROHAN456',
+                'LOVE789',
+                'FAMILY2026',
+                'GUEST001',
+                'GUEST002',
+                'GUEST003'
+            ];
+
+            if (verifyCodeBtn) {
+                verifyCodeBtn.addEventListener('click', function () {
+                    const code = invitationCodeInput.value.trim();
+
+                    if (!code) {
+                        showAlert('Please enter your invitation code.', 'error');
+                        return;
+                    }
+
+                    // Case-insensitive check
+                    const normalizedCode = code.toUpperCase();
+
+                    if (validCodes.includes(normalizedCode)) {
+                        // Store the verified code for later use
+                        sessionStorage.setItem('verifiedCode', normalizedCode);
+
+                        // Hide password section, show RSVP form
+                        passwordSection.style.display = 'none';
+                        rsvpFormSection.style.display = 'block';
+
+                        // Scroll to form
+                        rsvpFormSection.scrollIntoView({ behavior: 'smooth' });
+
+                        showAlert('Invitation verified successfully! Please fill out the RSVP form.', 'success');
+                    } else {
+                        showAlert('Invalid invitation code. Please check your invitation card and try again.', 'error');
+                        invitationCodeInput.focus();
+                    }
+                });
+
+                // Allow Enter key to verify code
+                invitationCodeInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        verifyCodeBtn.click();
+                    }
+                });
+            }
+
+            // Check if already verified (in case of page refresh)
+            if (sessionStorage.getItem('verifiedCode')) {
+                passwordSection.style.display = 'none';
+                rsvpFormSection.style.display = 'block';
+            }
+
+            // Attendance radio buttons
+            const attendingYes = document.getElementById('attendingYes');
+            const attendingNo = document.getElementById('attendingNo');
+            const declineReason = document.getElementById('declineReason');
+            const eventsSection = document.getElementById('eventsSection');
+            const guestCountSection = document.getElementById('guestCountSection');
+
+            if (attendingYes && attendingNo) {
+                attendingYes.addEventListener('change', function () {
+                    declineReason.style.display = 'none';
+                    eventsSection.style.display = 'block';
+                    guestCountSection.style.display = 'block';
+                });
+
+                attendingNo.addEventListener('change', function () {
+                    declineReason.style.display = 'block';
+                    eventsSection.style.display = 'none';
+                    guestCountSection.style.display = 'none';
+                });
+            }
+
+            // Decline reason selection
+            const reasonSelect = document.getElementById('reason');
+            const otherReason = document.getElementById('otherReason');
+            const otherReasonText = document.getElementById('otherReasonText');
+
+            if (reasonSelect) {
+                reasonSelect.addEventListener('change', function () {
+                    otherReason.style.display = this.value === 'other' ? 'block' : 'none';
+                    if (otherReasonText) {
+                        otherReasonText.required = this.value === 'other';
+                    }
+                });
+            }
+
+            // Guest counter
+            const guestCountInput = document.getElementById('guestCount');
+            const decreaseBtn = document.getElementById('decreaseGuests');
+            const increaseBtn = document.getElementById('increaseGuests');
+            const guestLabel = document.getElementById('guestLabel');
+            const additionalGuests = document.getElementById('additionalGuests');
+            const guestForms = document.getElementById('guestForms');
+            const addGuestBtn = document.getElementById('addGuestBtn');
+
+            let guestCount = 1;
+            let additionalGuestsArray = [];
+
+            function updateGuestCounter() {
+                guestCountInput.value = guestCount;
+                guestLabel.textContent = guestCount === 1 ? '1 Guest' : `${guestCount} Guests`;
+
+                // Show/hide additional guests section
+                if (guestCount > 1) {
+                    additionalGuests.style.display = 'block';
+                    updateGuestForms();
+                } else {
+                    additionalGuests.style.display = 'none';
+                }
+            }
+
+            function updateGuestForms() {
+                guestForms.innerHTML = '';
+
+                // Create forms for additional guests (excluding primary guest)
+                for (let i = 1; i < guestCount; i++) {
+                    const guestForm = document.createElement('div');
+                    guestForm.className = 'guest-form';
+                    guestForm.innerHTML = `
+                        <h5>Guest ${i + 1}</h5>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guest${i}_firstName">First Name *</label>
+                                <input type="text" id="guest${i}_firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guest${i}_lastName">Last Name *</label>
+                                <input type="text" id="guest${i}_lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="guest${i}_relationship">Relationship to Primary Guest</label>
+                            <select id="guest${i}_relationship">
+                                <option value="">Select relationship</option>
+                                <option value="spouse">Spouse</option>
+                                <option value="child">Child</option>
+                                <option value="parent">Parent</option>
+                                <option value="sibling">Sibling</option>
+                                <option value="friend">Friend</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        ${i > 1 ? `<button type="button" class="remove-guest" data-index="${i}">Remove Guest</button>` : ''}
+                    `;
+                    guestForms.appendChild(guestForm);
+                }
+
+                // Add event listeners to remove buttons
+                document.querySelectorAll('.remove-guest').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        if (guestCount > 1) {
+                            guestCount--;
+                            updateGuestCounter();
+                        }
+                    });
+                });
+            }
+
+            if (decreaseBtn && increaseBtn) {
+                decreaseBtn.addEventListener('click', function () {
+                    if (guestCount > 1) {
+                        guestCount--;
+                        updateGuestCounter();
+                    }
+                });
+
+                increaseBtn.addEventListener('click', function () {
+                    if (guestCount < 10) {
+                        guestCount++;
+                        updateGuestCounter();
+                    }
+                });
+            }
+
+            if (addGuestBtn) {
+                addGuestBtn.addEventListener('click', function () {
+                    if (guestCount < 10) {
+                        guestCount++;
+                        updateGuestCounter();
+                    }
+                });
+            }
+
+            // Dietary restrictions - uncheck "No Restrictions" if others are checked
+            const dietNoRestrictions = document.getElementById('dietNoRestrictions');
+            const otherDietOptions = document.querySelectorAll('input[name="dietary"]:not(#dietNoRestrictions)');
+
+            otherDietOptions.forEach(option => {
+                option.addEventListener('change', function () {
+                    if (this.checked) {
+                        dietNoRestrictions.checked = false;
+                    }
+                });
+            });
+
+            dietNoRestrictions.addEventListener('change', function () {
+                if (this.checked) {
+                    otherDietOptions.forEach(option => {
+                        option.checked = false;
+                    });
+                }
+            });
+
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function () {
+                    const item = this.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Form submission
+            const rsvpForm = document.getElementById('rsvpForm');
+            const successMessage = document.getElementById('successMessage');
+            const rsvpDetails = document.getElementById('rsvpDetails');
+
+            if (rsvpForm) {
+                rsvpForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Validate form
+                    if (!validateForm()) {
+                        return;
+                    }
+
+                    // Collect form data
+                    const formData = collectFormData();
+
+                    // In a real application, you would send this data to a server
+                    // For now, we'll simulate submission and show success message
+
+                    // Hide form, show success message
+                    rsvpFormSection.style.display = 'none';
+                    successMessage.style.display = 'block';
+
+                    // Display submitted details
+                    displaySubmittedDetails(formData);
+
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+
+                    // Clear verification from session storage
+                    sessionStorage.removeItem('verifiedCode');
+                });
+            }
+
+            // Form reset
+            const resetFormBtn = document.getElementById('resetForm');
+            if (resetFormBtn) {
+                resetFormBtn.addEventListener('click', function () {
+                    if (confirm('Are you sure you want to reset the form? All entered data will be lost.')) {
+                        rsvpForm.reset();
+                        guestCount = 1;
+                        updateGuestCounter();
+                    }
+                });
+            }
+
+            // Helper functions
+            function validateForm() {
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const termsAgree = document.getElementById('termsAgree').checked;
+
+                if (!firstName || !lastName || !email || !phone) {
+                    showAlert('Please fill in all required fields.', 'error');
+                    return false;
+                }
+
+                if (!validateEmail(email)) {
+                    showAlert('Please enter a valid email address.', 'error');
+                    return false;
+                }
+
+                if (!validatePhone(phone)) {
+                    showAlert('Please enter a valid phone number.', 'error');
+                    return false;
+                }
+
+                if (!termsAgree) {
+                    showAlert('Please agree to the terms before submitting.', 'error');
+                    return false;
+                }
+
+                return true;
+            }
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            function validatePhone(phone) {
+                // Simple validation - at least 10 digits
+                const digits = phone.replace(/\D/g, '');
+                return digits.length >= 10;
+            }
+
+            function collectFormData() {
+                const formData = {
+                    primaryGuest: {
+                        firstName: document.getElementById('firstName').value.trim(),
+                        lastName: document.getElementById('lastName').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        address: document.getElementById('address').value.trim()
+                    },
+                    attendance: document.querySelector('input[name="attendance"]:checked').value,
+                    events: [],
+                    guests: guestCount,
+                    dietary: [],
+                    songRequest: document.getElementById('songRequest').value.trim(),
+                    message: document.getElementById('message').value.trim(),
+                    submissionDate: new Date().toLocaleString()
+                };
+
+                // Collect events
+                document.querySelectorAll('input[name="events"]:checked').forEach(checkbox => {
+                    formData.events.push(checkbox.value);
+                });
+
+                // Collect dietary preferences
+                document.querySelectorAll('input[name="dietary"]:checked').forEach(checkbox => {
+                    formData.dietary.push(checkbox.value);
+                });
+
+                // Collect decline reason if applicable
+                if (formData.attendance === 'no') {
+                    formData.declineReason = document.getElementById('reason').value;
+                    if (formData.declineReason === 'other') {
+                        formData.otherReason = document.getElementById('otherReasonText').value.trim();
+                    }
+                }
+
+                // Collect additional guests info
+                formData.additionalGuests = [];
+                for (let i = 1; i < guestCount; i++) {
+                    const guest = {
+                        firstName: document.getElementById(`guest${i}_firstName`)?.value.trim() || '',
+                        lastName: document.getElementById(`guest${i}_lastName`)?.value.trim() || '',
+                        relationship: document.getElementById(`guest${i}_relationship`)?.value || ''
+                    };
+                    if (guest.firstName && guest.lastName) {
+                        formData.additionalGuests.push(guest);
+                    }
+                }
+
+                return formData;
+            }
+
+            function displaySubmittedDetails(formData) {
+                rsvpDetails.innerHTML = '';
+
+                // Primary guest info
+                const primaryGuestDiv = document.createElement('div');
+                primaryGuestDiv.className = 'detail-item';
+                primaryGuestDiv.innerHTML = `
+                    <h5>Primary Guest</h5>
+                    <p>${formData.primaryGuest.firstName} ${formData.primaryGuest.lastName}</p>
+                    <small>${formData.primaryGuest.email}</small>
+                `;
+                rsvpDetails.appendChild(primaryGuestDiv);
+
+                // Attendance status
+                const attendanceDiv = document.createElement('div');
+                attendanceDiv.className = 'detail-item';
+                attendanceDiv.innerHTML = `
+                    <h5>Attendance Status</h5>
+                    <p>${formData.attendance === 'yes' ? 'Attending' : 'Not Attending'}</p>
+                `;
+                rsvpDetails.appendChild(attendanceDiv);
+
+                // Events (if attending)
+                if (formData.attendance === 'yes' && formData.events.length > 0) {
+                    const eventsDiv = document.createElement('div');
+                    eventsDiv.className = 'detail-item';
+                    let eventsText = '';
+                    formData.events.forEach(event => {
+                        switch (event) {
+                            case 'mehndi': eventsText += 'Mehndi Night<br>'; break;
+                            case 'barat': eventsText += 'Barat Night<br>'; break;
+                            case 'walima': eventsText += 'Walima Night<br>'; break;
+                        }
+                    });
+                    eventsDiv.innerHTML = `
+                        <h5>Events Attending</h5>
+                        <p>${eventsText}</p>
+                    `;
+                    rsvpDetails.appendChild(eventsDiv);
+                }
+
+                // Number of guests
+                const guestsDiv = document.createElement('div');
+                guestsDiv.className = 'detail-item';
+                guestsDiv.innerHTML = `
+                    <h5>Number of Guests</h5>
+                    <p>${formData.guests}</p>
+                `;
+                rsvpDetails.appendChild(guestsDiv);
+
+                // Submission date
+                const dateDiv = document.createElement('div');
+                dateDiv.className = 'detail-item';
+                dateDiv.innerHTML = `
+                    <h5>Submitted On</h5>
+                    <p>${formData.submissionDate}</p>
+                `;
+                rsvpDetails.appendChild(dateDiv);
+            }
+
+            function showAlert(message, type) {
+                // Create alert element
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type}`;
+                alertDiv.innerHTML = `
+                    <p>${message}</p>
+                    <button class="close-alert">&times;</button>
+                `;
+
+                // Style the alert
+                alertDiv.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    padding: 1rem 2rem;
+                    background: ${type === 'error' ? '#f44336' : '#4CAF50'};
+                    color: white;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    min-width: 300px;
+                    animation: slideIn 0.3s ease;
+                `;
+
+                // Add close button functionality
+                alertDiv.querySelector('.close-alert').addEventListener('click', function () {
+                    alertDiv.remove();
+                });
+
+                // Add to page
+                document.body.appendChild(alertDiv);
+
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    if (alertDiv.parentElement) {
+                        alertDiv.remove();
+                    }
+                }, 5000);
+            }
+
+            // Initialize guest counter
+            updateGuestCounter();
+        });
+    </script>
+</body>
+
+</html>
