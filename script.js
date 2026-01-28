@@ -30,7 +30,7 @@ if (navToggle && navMenu) {
 
 // Countdown Timer
 function updateCountdown() {
-    const weddingDate = new Date('february 10 2026 16:00:00').getTime();
+    const weddingDate = new Date('10 Feb 2026 16:00:00').getTime();
     const now = new Date().getTime();
     const timeLeft = weddingDate - now;
 
